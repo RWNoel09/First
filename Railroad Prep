@@ -1,1 +1,5 @@
-<img src="C:\Users\owner\Pictures\Railroad Prep.png" alt="A railroad diagram of an HTML list" />
+<html>
+  <body>
+    <img src="C:\Users\owner\Pictures\Railroad Prep.png" alt="A railroad diagram of an HTML list" />
+  </body>
+</html>
