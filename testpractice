@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<body>
+<table>
+  <tr>
+    <th scope='row'>Course</th>
+    <td>Man Acc</td>
+    <td>Macro</td>
+    <td>En Ethics</td>
+    <td>Web Data Design</td>
+   </tr>
+   <tr>
+    <th scope='row'>Course Number</th>
+    <td>270</td>
+    <td>210</td>
+    <td>400</td>
+    <td>265</td>
+   </tr>
+   <tr>
+    <th scope='row'>Course Time</th>
+    <td>1020-1120</td>
+    <td>1240-140</td>
+    <td>300-400</td>
+    <td>140-340</td>
+   </tr>
+</body>
+</html>
