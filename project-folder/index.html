@@ -9,7 +9,7 @@
     <script type="text/javascript">
     <ul></ul>
     var dataset = [ horse, camel, bear, eagle, frog ];                              
-    d3.select('ul').selectAll('li').data(dataset).enter().append('li');                             
+    d3.select("ul").selectAll("li").data(dataset).enter().append('li').text(function(d) {return d; });                             
     </script>
   </body>  
 </html>                                  
