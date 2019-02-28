@@ -6,8 +6,8 @@
     <script type="text/javascript" src="d3.js"></script>                                   
   </head>
   <body> 
-    <ul></ul>
     <script type="text/javascript">
+    d3.select("body").append("ul");
     var dataset = [ "horse", "camel", "bear", "eagle", "frog" ];                              
     d3.select("ul").selectAll("li").data(dataset).enter().append('li').text(function(d) {return d; });                             
     </script>
