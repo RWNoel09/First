@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>D3 Page Template</title>
-    <script type="text/javascript" src="d3.js></script>
+    <script type="text/javascript" src="d3.js></script>                                   
   </head>
-  <body>  
+  <body>                                    
     <script type="text/javascript">
+    <ul></ul>
+    var dataset = [ horse, camel, bear, eagle, frog ];                              
+    d3.select('ul').selectAll('li').data(dataset).enter().append('li');                             
     </script>
   </body>  
 </html>                                  
