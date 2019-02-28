@@ -5,10 +5,10 @@
     <title>D3 Page Template</title>
     <script type="text/javascript" src="d3.js"></script>                                   
   </head>
-  <body>                                    
-    <script type="text/javascript">
+  <body> 
     <ul></ul>
-    var dataset = [ horse, camel, bear, eagle, frog ];                              
+    <script type="text/javascript">
+    var dataset = [ "horse", "camel", "bear", "eagle", "frog" ];                              
     d3.select("ul").selectAll("li").data(dataset).enter().append('li').text(function(d) {return d; });                             
     </script>
   </body>  
