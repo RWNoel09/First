@@ -1,5 +1,6 @@
 table {
   border-collapse: collapse;
+  background-color: #F58b4c;
 }
 
 table, tr, td {
@@ -7,5 +8,13 @@ table, tr, td {
 }
 
 td {
-  padding: 10px;
+  padding: 5px;
+}
+h1 {
+  font-family:cursive;
+  font-weight: 800;
+}
+body {
+  background-image: url(https://previews.123rf.com/images/valeriikhadeiev/valeriikhadeiev1805/valeriikhadeiev180500017/100621489-zoo-entrance-gates-cartoon-poster-with-elephant-giraffe-lion-safari-and-visitors-on-territory-vector.jpg);
+  font-size: 300%
 }
