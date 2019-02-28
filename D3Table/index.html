@@ -1,2 +1,38 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="d3.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var animalmaker = function(name, type, habitat, lifespan)
+      {
+        return {
+          name: name, 
+          type: type,
+          habitat: habitat,
+          lifespan: lifespan
+        }
+      };
+
+      var zoo [
+      animalmaker("chimp", "mammal", "rainforest", "50 years"),
+      animalmaker("grasshopper", "insect", "grassland", "1 year"),
+      animalmaker("tortoise", "reptile", "desert", "150 years"),
+      animalmaker("woodpecker", "bird", "forest", "8 years")
+    ];
+
+      var table = d3.select("body").append("table");
+      var row = table.selectAll("tr").data(zoo).enter().append("tr");
+
+      rows.append("td").text(function(d) {return d.name});
+      rows.append("td").text(function(d) {return d.type});
+      rows.append("td").text(function(d) {return d.habitat});
+      rows.append("td").text(function(d) {return d.lifespan});
+      
+      
+    </script>  
+  </body>
 </html>
