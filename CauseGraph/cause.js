@@ -29,14 +29,12 @@ var drawChart = function(data,){
               return i * barWidth;
             })
             .attr("y", function(d){
-              return height - d.num*10;
+              return height - d.gini;
             })
             .attr("height", function(d){
-              return d.num * 10;
+              return d.gini;
             })
             .attr("width", barWidth)
-            .attr("fill", function(d){
-              return d.color;
-            });
+            .attr("fill", "green");
 
 }
