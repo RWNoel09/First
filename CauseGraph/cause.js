@@ -1,4 +1,4 @@
-var dataCSV = d3.csv("https://data.ny.gov/api/views/bui8-bb6g/rows.csv?accessType=DOWNLOAD");
+var dataCSV = d3.csv("../data.csv");
 
 dataCSV.then(function(data)
 {
