@@ -45,7 +45,7 @@ var drawChart = function(data,){
       return d.Country;
     })
     .attr("x", function(d, i){
-      return i * barWidth + 9;
+      return i * barWidth + 12;
     })
     .attr("y", function(d){
       return height - d.gini + 15;
@@ -53,20 +53,6 @@ var drawChart = function(data,){
     .attr("font-size", "12px")
     .attr("fill", "white");
 
-  svg.selectAll("text")
-    .data(data)
-    .enter()
-    .append("text")
-    .text(function(d){
-      return d.gini;
-    })
-    .attr("x", function(d, i){
-      return i * barWidth + 9;
-    })
-    .attr("y", function(d){
-      return height - d.gini + 30;
-    })
-    .attr("font-size", "12px")
-    .attr("fill", "white");
+ 
 
 }
