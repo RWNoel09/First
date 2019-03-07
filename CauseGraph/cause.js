@@ -26,7 +26,7 @@ var drawChart = function(data,){
             .enter()
             .append("rect")
             .attr("x", function(d,i){
-              return i * barWidth + 5;
+              return i * barWidth + 10;
             })
             .attr("y", function(d){
               return height - d.gini;
@@ -45,12 +45,12 @@ var drawChart = function(data,){
       return d.Country;
     })
     .attr("x", function(d, i){
-      return i * barWidth;
+      return i * barWidth + 40;
     })
     .attr("y", function(d){
       return height - d.gini + 15;
     })
-    .attr("font-size", "5px")
+    .attr("font-size", "15px")
     .attr("fill", "white");
 
 }
