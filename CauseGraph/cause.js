@@ -42,7 +42,7 @@ var drawChart = function(data,){
     .enter()
     .append("text")
     .text(function(d){
-      return d.country;
+      return d.Country;
     })
     .attr("x", function(d, i){
       return i * barWidth;
