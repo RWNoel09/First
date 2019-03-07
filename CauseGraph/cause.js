@@ -45,13 +45,30 @@ var drawChart = function(data,){
       return d.Country;
     })
     .attr("x", function(d, i){
-      return i * barWidth + 12;
+      return i * barWidth + 15;
     })
     .attr("y", function(d){
       return height - d.gini + 15;
     })
     .attr("font-size", "12px")
     .attr("fill", "white");
+  
+    svg.select("text")
+    .data(data)
+    .enter()
+    .append("text")
+    .text(function(d){
+      return d.gini;
+    })
+    .attr("x", function(d, i){
+      return i * barWidth + 15;
+    })
+    .attr("y", function(d){
+      return height - d.gini + 30;
+    })
+    .attr("font-size", "12px")
+    .attr("fill", "white");
+
 
  
 
