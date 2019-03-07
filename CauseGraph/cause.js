@@ -53,7 +53,7 @@ var drawChart = function(data,){
     .attr("font-size", "12px")
     .attr("fill", "white");
   
-    svg.select("text.num")
+    svg.selectAll("text.num")
     .data(data)
     .enter()
     .append("text")
