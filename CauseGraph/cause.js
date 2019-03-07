@@ -36,5 +36,21 @@ var drawChart = function(data,){
             })
             .attr("width", barWidth)
             .attr("fill", "green");
+   
+  svg.selectAll("text")
+    .data(data)
+    .enter()
+    .append("text")
+    .text(function(d){
+      return d.country;
+    })
+    .attr("x", function(d, i){
+      return i * barWidth;
+    })
+    .attr("y", function(d){
+      return height - d.gini + 15;
+    })
+    .attr("font-size", "5px")
+    .attr("fill", "white");
 
 }
