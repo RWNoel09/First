@@ -55,7 +55,6 @@ var drawChart = function(data,){
   
     svg.select("text")
     .data(data)
-    .enter()
     .append("text")
     .text(function(d){
       return d.gini;
