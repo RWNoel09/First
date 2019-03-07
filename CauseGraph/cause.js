@@ -38,22 +38,5 @@ var drawChart = function(data,){
             .attr("fill", function(d){
               return d.color;
             });
-    svg.selectAll("text")
-    .data(data)
-    .enter()
-    .append("text")
-    .text(function(d){
-      return d.num;
-    })
-    .attr("x", function(d, i){
-      return i * barWidth + 25;
-    })
-    .attr("y", function(d){
-      return height - d.num*10 + 8;
-    })
-    .attr("font-size", "9px")
-    .attr("fill", "white");
-
-
 
 }
