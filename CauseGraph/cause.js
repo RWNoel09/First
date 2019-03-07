@@ -37,7 +37,7 @@ var drawChart = function(data,){
             .attr("width", barWidth)
             .attr("fill", "green");
    
-  svg.selectAll("text")
+  svg.selectAll("text.labels")
     .data(data)
     .enter()
     .append("text")
@@ -53,10 +53,10 @@ var drawChart = function(data,){
     .attr("font-size", "12px")
     .attr("fill", "white");
   
-    svg.select("text")
+    svg.select("text.num")
     .data(data)
     .enter()
-    .insert("text")
+    .append("text")
     .text(function(d){
       return d.gini;
     })
