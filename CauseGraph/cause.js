@@ -53,4 +53,20 @@ var drawChart = function(data,){
     .attr("font-size", "12px")
     .attr("fill", "white");
 
+  svg.selectAll("text")
+    .data(data)
+    .enter()
+    .append("text")
+    .text(function(d){
+      return d.gini;
+    })
+    .attr("x", function(d, i){
+      return i * barWidth + 5;
+    })
+    .attr("y", function(d){
+      return height - d.gini + 30;
+    })
+    .attr("font-size", "12px")
+    .attr("fill", "white");
+
 }
