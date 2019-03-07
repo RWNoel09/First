@@ -26,7 +26,7 @@ var drawChart = function(data,){
             .enter()
             .append("rect")
             .attr("x", function(d,i){
-              return i * barWidth;
+              return i * barWidth + 5;
             })
             .attr("y", function(d){
               return height - d.gini;
