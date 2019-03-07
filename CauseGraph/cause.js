@@ -45,12 +45,12 @@ var drawChart = function(data,){
       return d.Country;
     })
     .attr("x", function(d, i){
-      return i * barWidth + 40;
+      return i * barWidth + 5;
     })
     .attr("y", function(d){
       return height - d.gini + 15;
     })
-    .attr("font-size", "15px")
+    .attr("font-size", "12px")
     .attr("fill", "white");
 
 }
