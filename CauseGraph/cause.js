@@ -1,21 +1,9 @@
-var dataCSV = d3.csv(".csv");
+var dataCSV = d3.csv("https://data.ny.gov/api/views/bui8-bb6g/rows.csv?accessType=DOWNLOAD");
 
-dataJSON.then(function(data)
+dataCSV.then(function(data)
 {
   console.log("data",data);
-  drawChart(data, "#json");
-  makeLegend(data, "#legendJ");
-},
-function(err)
-{
-  console.log(err);
-});
-
-dataCSV.then(function(dataSecond)
-{
-  console.log("data",dataSecond);
-  drawChart(dataSecond, "#csv");
-  makeLegend(dataSecond, "#legendCSV");
+  drawChart(data, "svg");
 },
 function(err)
 {
@@ -24,22 +12,14 @@ function(err)
 
 
 
-var drawChart = function(data, name){
+var drawChart = function(data,){
   var height = 200;
   var width = 400;
   var svg;
   var barWidth = (width/data.length)
-  if (name === "#csv"){
-    svg = d3.select("#csv")
+    svg = d3.select("svg")
     .attr("width", width)
     .attr("height", height);
-
-  }
-  else{
-    svg = d3.select("#json")
-    .attr("width", width)
-    .attr("height", height);
-  }
 
   svg.selectAll("rect")
             .data(data)
@@ -75,44 +55,5 @@ var drawChart = function(data, name){
     .attr("fill", "white");
 
 
-
-}
-
-
-
-
-
-
-var makeLegend = function(theData, name){
-  var width = 200;
-  var height = 200;
-  var boxWidth = 10;
-  var svg = d3.select(name)
-              .attr("height", height)
-              .attr("width", width);
-  svg.selectAll("rect")
-     .data(theData)
-     .enter()
-     .append("rect")
-     .attr("x", function(d,i)
-      { return 21;})
-    .attr("y", function (d, i)
-      { return (i+1)*15 + 9;})
-    .attr("width", boxWidth)
-    .attr("height", boxWidth-2)
-    .attr("fill", function(d)
-      { return d.color;})
-
-svg.selectAll("text")
-   .data(theData)
-   .enter()
-   .append("text")
-   .text(function(d)
-      { return d.color;})
-   .attr("x", function(d,i)
-      { return 45})
-   .attr("y", function(d, i)
-      { return (i+1)*15 + 19;})
-   .attr("fill", "black")
 
 }
