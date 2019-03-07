@@ -45,7 +45,7 @@ var drawChart = function(data,){
       return d.Country;
     })
     .attr("x", function(d, i){
-      return i * barWidth + 15;
+      return i * barWidth + 17;
     })
     .attr("y", function(d){
       return height - d.gini + 15;
@@ -60,7 +60,7 @@ var drawChart = function(data,){
       return d.gini;
     })
     .attr("x", function(d, i){
-      return i * barWidth + 15;
+      return i * barWidth + 17;
     })
     .attr("y", function(d){
       return height - d.gini + 30;
