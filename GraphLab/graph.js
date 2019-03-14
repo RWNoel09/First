@@ -11,12 +11,12 @@ function(err)
 });
 
 var initChart = function(data){
-  var height = 1000px;
-  var width = 1500px;
+  var height = 500;
+  var width = 750;
   var barWidth = (width/data.length)
   var svg = d3.select('svg');
   svg.selectAll('rect')
-     .data(data)
+     .data(data[0].grades)
      .enter()
      .append("rect")
      .attr("x", function(d,i){
