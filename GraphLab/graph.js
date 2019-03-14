@@ -13,6 +13,12 @@ function(err)
 var initChart = function(data){
   var height = 500;
   var width = 750;
+  var yScale = d3.scaleLinear()
+                 .domain([0,100])
+                 .range([height,0])
+  var xScale = d3.scaleLinear()
+                 .domain([0,4])
+                 .range([0,width])
   var barWidth = (width/data.length)
   var svg = d3.select('svg')
               .attr("width", width)
@@ -22,7 +28,7 @@ var initChart = function(data){
      .enter()
      .append("rect")
      .attr("x", function(d,i){
-       return i * barWidth + 10;
+       return i * xScale + 10;
      })
      .attr("y", function(d){
        return height - d.grade;
@@ -32,5 +38,7 @@ var initChart = function(data){
      })
      .attr("width", barWidth)
      .attr("fill", "blue");
+
+
 
 }
