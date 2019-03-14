@@ -10,7 +10,7 @@ function(err)
   console.log(err);
 });
 
-var initChart function(data[0]){
+var initChart = function(data[0]){
   var height = 1000px;
   var width = 1500px;
   var barWidth = (width/data.length)
