@@ -14,7 +14,9 @@ var initChart = function(data){
   var height = 500;
   var width = 750;
   var barWidth = (width/data.length)
-  var svg = d3.select('svg');
+  var svg = d3.select('svg')
+              .attr("width", width)
+              .attr("height", height);
   svg.selectAll('rect')
      .data(data[0].grades)
      .enter()
