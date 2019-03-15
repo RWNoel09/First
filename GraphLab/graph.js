@@ -61,7 +61,7 @@ var initChart = function(data){
        d3.select(this)
          .attr("fill", "blue");
      })
-     .append('words')
+     .append('text')
      .text(function(d){
        return d.name;
      })
@@ -69,11 +69,12 @@ var initChart = function(data){
        return i*barWidth;
      })
      .attr('y', function(d,i){
-       return height - d.grade;
+       return height;
      });
 
   var xAxis = d3.axisBottom()
                   .scale(xScale)
+                  .ticks(4);
   var yAxis = d3.axisLeft()
                   .scale(yScale);
 
@@ -82,26 +83,30 @@ var initChart = function(data){
      .attr("transform", "translate(" + margins.left + "," + (height + margins.top + 10) + ")")
      .call(xAxis);
 
-  svg.append("g")
+   svg.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(" + margins.left + ", " + (margins.top + 10) + ")")
         .call(yAxis);
 
-   var cday = d3.select("body")
-                .selectAll("p")
-                .data(data[0].day)
-                .enter()
-                .append("p")
-                .text("Day "+ data.day +"")
+ //var body = d3.select("body");
+ //var cday = d3.selectAll("p")
+                //.data(data[0].day)
+                //.enter()
+                //.append("text")
+                //.text(function(d){
+                  //return d;
+                //})
 
 }
+
 var body = d3.select("body");
 var button =
     d3.selectAll('button')
       .on('click', function(){
-        if (this.name == "previous") { var choice = "previous"}
-        else if (this.name == "next") {var choice = "next"}
+        if (this.class == "previous") { var choice = "previous"}
+        else if (this.class == "next") {var choice = "next"}
         update(data,choice,plot,height,yScale);
+        console.log("here")
       });
 
 var update = function(data,choice,plot,height,yScale){
