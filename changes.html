@@ -21,11 +21,17 @@
   <body>
     <h1>Highlighting Changes</h1><br>
     <p class="change">Zero-Based Indexes</p>
-    <p class="expl"></p><br>
-    <p class="change"></p>
-    <p class="expl"></p><br>
-    <p class="change"></p>
-    <p class="expl"></p><br>
+    <p class="expl">Calculating the percentage change using a zero-based index is a good way highlight change in a visualization. To start, choose the index origin which will serve as your data point of comparison. Every other datapoint will be compared to the index origin using the following formula:
+ Percent change = ((Each score – Index Origin)/Index Origin) x 100
+By plotting the datapoints using this formula one can see the percentage change in each datapoint from the index origin.
+</p><br>
+    <p class="change">Change Rate</p>
+    <p class="expl">If you are interested in comparing the rate of change of one period to the previous one, then calculating the change rate would be useful. The formula for change rate is: 
+	Change Rate = New Period / Previous Period
+The resulting number multiplied by 100 is the new period expressed as a percentage of the old period. This can be useful for identifying periods of radical change.
+</p><br>
+    <p class="change">Logs</p>
+    <p class="expl">Using a logarithmic scale is another way to visualize change rate. This works when you’re dealing with numbers that show exponential growth. To begin your log transformation chose a log base, which is usually 10. Now, take the log of your datapoint, which means finding the power to which 10 can be raised to so that the result is the value of your datapoint. By using the scale your data will become manageable and it will be plain to see that even though the growth is exponential, the growth rate is probably constant. </p><br>
     
   </body>
 </html>
