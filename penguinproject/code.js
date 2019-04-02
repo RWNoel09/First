@@ -14,7 +14,7 @@ var screen={width:650,height:420};
 
 var getgradeArray=function(d){
   var gradearray = d.map(function(student){
-    var finalgrade = student.final.grade
+    var finalgrade = parseFloat(student.final.grade)
     var hwarray = student.homework.map(function(hw){
       return hw.grade}) 
     var hwgrade1 = hwarray.reduce(function(total, amount){
