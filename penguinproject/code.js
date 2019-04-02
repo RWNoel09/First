@@ -34,11 +34,35 @@ var getFgradeArray=function(d){
       return total + amount})
     var testgrade = (testgrade1/200)*100
     var stugrade = 0.3*finalgrade + 0.4*testgrade + 0.15*quizgrade + 0.15*hwgrade
-    console.log(stugrade)
     return stugrade})
   return FgradeArray
 }
 
+ var getHgradeArray=function(d){
+  var HgradeArray = d.map(function(student){
+    var hwarray = student.homework.slice(0,7).map(function(hw){
+     return hw.grade})
+    var hwgrade1 = hwarray.reduce(function(total, amount){
+     return total + amount})
+    var hwgrade = (hwgrade1/350)*100     
+    var quizarray = student.quizes.slice(0,14).map(function(quiz){
+       return quiz.grade})  
+    var quizgrade1 = quizarray.reduce(function(total, amount){
+       return total + amount})
+    var quizgrade = (quizgrade1/140)*100
+    var testarray = student.test[0].map(function(t){
+       return t.grade})  
+    var testgrade1 = testarray.reduce(function(total, amount){
+       return total + amount})
+    var testgrade = (testgrade1/100)*100
+    var stugrade = (0.4*testgrade + 0.15*quizgrade + 0.15*hwgrade)/0.7
+    console.log(stugrade)
+    return stugrade})
+  return HgradeArray 
+ }
+
 var FgradeArray = getFgradeArray(data)
 console.log(FgradeArray)
+var HgradeArray = getHgradeArray(data)
+console.log(HgradeArray)
 }
