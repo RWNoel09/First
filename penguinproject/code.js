@@ -14,7 +14,7 @@ var screen={width:650,height:420};
 
 var getgradeArray=function(d){
   var gradearray = d.map(function(student){
-    var finalgrade = student.final.grade
+    var finalgrade = student.final[1]
     console.log(finalgrade)
     var hwarray = student.homework.map(function(hw){
       return hw.grade}) 
