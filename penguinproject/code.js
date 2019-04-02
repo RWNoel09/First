@@ -28,8 +28,8 @@ var getgradeArray=function(d){
     var testgrade = testarray.reduce(function(total, amount){
       return ((total + amount)/200)*100})
     var stugrade = 0.3*finalgrade + 0.4*testgrade + 0.15*quizgrade + 0.15*hwgrade
-    return stugrade
     console.log(stugrade)
+    return stugrade 
   })
 }
 
