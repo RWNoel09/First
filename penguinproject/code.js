@@ -11,8 +11,6 @@ var screen={width:650,height:420};
  var h=screen.height-margin.top-margin.bottom
  var w=screen.width-margin.right-margin.left
 
- var gradearray = getgradeArray(data)
-
 
 var getgradeArray=function(d){
   var gradearray = d.map(function(student){
@@ -33,4 +31,6 @@ var getgradeArray=function(d){
     return stugrade
   })
 }
+
+var gradeArray = getgradeArray(data)
 }
