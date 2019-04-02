@@ -1,4 +1,4 @@
-d3.json('classData.json').then(function(data){
+var dataP = d3.json('classData.json').then(function(data){
 
 drawScatterplot(data)
 console.log(data)
