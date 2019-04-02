@@ -13,14 +13,13 @@ var screen={width:650,height:420};
 
 
 var getFgradeArray=function(d){
-  var gradearray = d.map(function(student){
+  var FgradeArray = d.map(function(student){
    var finalarray = student.final.map(function(final){
      return final.grade})
    var finalgrade = finalarray.reduce(function(total, amount){
      return total + amount})
     var hwarray = student.homework.map(function(hw){
       return hw.grade})
-    console.log(hwarray)
     var hwgrade1 = hwarray.reduce(function(total, amount){
       return total + amount})
     var hwgrade = (hwgrade1/950)*100
@@ -36,8 +35,8 @@ var getFgradeArray=function(d){
     var testgrade = (testgrade1/200)*100
     var stugrade = 0.3*finalgrade + 0.4*testgrade + 0.15*quizgrade + 0.15*hwgrade
     console.log(stugrade)
-    return stugrade 
-  })
+    return stugrade})
+  return FgradeArray
 }
 
 var FgradeArray = getFgradeArray(data)
