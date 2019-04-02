@@ -17,9 +17,9 @@ var getgradeArray=function(d){
     var finalgrade = student.final.grade
     var hwarray = student.homework.map(function(hw){
       return hw.grade}) 
-    console.log(hwarray)
     var hwgrade = hwarray.reduce(function(total, amount){
       return ((total + amount)/950)*100})
+    console.log(hwgrade)
     var quizarray = student.quizes.map(function(quiz){
       return quiz.grade})  
     var quizgrade = quizarray.reduce(function(total, amount){
