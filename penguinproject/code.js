@@ -12,7 +12,7 @@ var screen={width:650,height:420};
  var w=screen.width-margin.right-margin.left
 
 
-var getgradeArray=function(d){
+var getFgradeArray=function(d){
   var gradearray = d.map(function(student){
    var finalarray = student.final.map(function(final){
      return final.grade})
@@ -34,10 +34,10 @@ var getgradeArray=function(d){
       return total + amount})
     var testgrade = (testgrade1/200)*100
     var stugrade = 0.3*finalgrade + 0.4*testgrade + 0.15*quizgrade + 0.15*hwgrade
-    console.log(stugrade)
     return stugrade 
   })
 }
 
-var gradeArray = getgradeArray(data)
+var FgradeArray = getFgradeArray(data)
+console.log(FgradeArray)
 }
