@@ -123,7 +123,7 @@ chart.selectAll("circle")
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div.html(d.penguin)	
+            div.text(d.penguin)	
                 .style("left", (d3.select(this).attr("cx")) + "px")		
                 .style("top", (d3.select(this).attr("cy")) + "px");	
             })			
