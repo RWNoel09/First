@@ -68,11 +68,25 @@ var getFgradeArray=function(d){
   return changearray
  }
 
+var penArray:["Bookworm","Crafty","Cyclist","Drunken","Easter","EBook","Farmer","Gentleman","Judo","Moana","Painter","Grill","Pharoh","Pilot","Pinga","Pixie","Sailor","Santa","Tauch","Tux","ValentineO","Valentine","Wizard"]
+ 
+var addlabels = function(c,p){
+ var newarray = c.map(function(d,i){
+  return {
+   change: d[i],
+   penguin: p[i]
+  }
+ })
+ return newarray
+}
+    
 var FgradeArray = getFgradeArray(data)
 console.log(FgradeArray)
 var HgradeArray = getHgradeArray(data)
 console.log(HgradeArray)
 var gradechange1 = getGradechange(FgradeArray,HgradeArray)
+var gradechange = addlabels(gradechange1,penArray)
+console.log(gradechange)
 console.log(gradechange1)
  
 var svg = d3.select("body")
@@ -126,7 +140,7 @@ chart.selectAll("circle")
  
    svg.append("text")
   .attr('x',margin.left+w)
-  .attr('y',margin.top+(h/2)+10)
+  .attr('y',margin.top+(h/2)+12)
   .attr('id', 'Penguin')
   .text("Penguin")
   .style('font-size', 15)
