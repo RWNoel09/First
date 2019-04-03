@@ -116,5 +116,19 @@ chart.selectAll("circle")
   .attr('id', 'xAxis')
   .call(xAxis)
   .attr('transform', 'translate(' + (margin.left)+ ',' + (h+margin.top) + ')')
+ 
+  svg.append("text")
+  .attr('x',margin.left-40)
+  .attr('y',margin.top)
+  .attr('id', 'PerChange')
+  .text("Percentage Change")
+  .style('font-size', 15)
+ 
+   svg.append("text")
+  .attr('x',margin.left+w/2)
+  .attr('y',margin.top+h+35)
+  .attr('id', 'Penguin')
+  .text("Penguin")
+  .style('font-size', 15)
 
 }
