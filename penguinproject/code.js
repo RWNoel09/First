@@ -59,9 +59,18 @@ var getFgradeArray=function(d){
     return stugrade})
   return HgradeArray 
  }
+ 
+ var getGradechange =function(f,h){
+  var changearray = h.map(function(d,i){
+   var change = f[i] - d
+   var perchange = (change/d)*100
+   return perchange})
+  return changearray
+ }
 
 var FgradeArray = getFgradeArray(data)
 console.log(FgradeArray)
 var HgradeArray = getHgradeArray(data)
 console.log(HgradeArray)
+var gradechange1 = getGradechange(FgradeArray,HgradeArray)
 }
