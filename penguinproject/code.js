@@ -88,6 +88,10 @@ var gradechange1 = getGradechange(FgradeArray,HgradeArray)
 var gradechange = addlabels(gradechange1,penArray)
 console.log(gradechange)
 console.log(gradechange1)
+
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
  
 var svg = d3.select("body")
             .append("svg")
@@ -107,11 +111,6 @@ var yScale=d3.scaleLinear()
              .domain([-50,50])
              .range([h,margin.top])
              .nice();
- 
- // Define the div for the tooltip
-var div = d3.select("body").append("div")	
-    .attr("class", "tooltip")				
-    .style("opacity", 0);
 
 chart.selectAll("circle")
      .data(gradechange)
