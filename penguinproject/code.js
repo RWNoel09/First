@@ -109,11 +109,11 @@ var yScale=d3.scaleLinear()
              .nice();
 
 chart.selectAll("circle")
-     .data(gradechange1)
+     .data(gradechange)
      .enter()
      .append("circle")
      .attr("cx", function(d,i){return xScale(i)+1})
-     .attr("cy", function(d){return yScale(d)})
+     .attr("cy", function(d){return yScale(d.change)})
      .attr("r", 5)
  
   var yAxis=d3.axisLeft(yScale)
