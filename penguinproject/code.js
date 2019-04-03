@@ -50,7 +50,7 @@ var getFgradeArray=function(d){
     var quizgrade1 = quizarray.reduce(function(total, amount){
        return total + amount})
     var quizgrade = (quizgrade1/140)*100
-    var testarray = student.test[0].map(function(t){
+    var testarray = student.test.slice(0,1).map(function(t){
        return t.grade})  
     var testgrade1 = testarray.reduce(function(total, amount){
        return total + amount})
