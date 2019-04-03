@@ -73,7 +73,7 @@ var penArray=["Bookworm","Crafty","Cyclist","Drunken","Easter","EBook","Farmer",
 var addlabels = function(c,p){
  var newarray = c.map(function(d,i){
   return {
-   change: d[i],
+   change: d[i].valueOf(),
    penguin: p[i]
   }
  })
@@ -140,7 +140,7 @@ chart.selectAll("circle")
  
    svg.append("text")
   .attr('x',margin.left+w)
-  .attr('y',margin.top+(h/2)+12)
+  .attr('y',margin.top+(h/2)+14)
   .attr('id', 'Penguin')
   .text("Penguin")
   .style('font-size', 15)
