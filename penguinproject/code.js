@@ -95,7 +95,7 @@ var svg = d3.select("body")
             .attr("height", screen.height )
             .attr("id", "chart")
 
-var div = d3.select("svg").append("div")	
+var div = d3.select("body").append("div")	
     .attr("class", "tooltip")				
     .style("opacity", 0);
 
