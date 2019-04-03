@@ -115,8 +115,7 @@ chart.selectAll("circle")
      .attr("cx", function(d,i){return xScale(i)+1})
      .attr("cy", function(d){return yScale(d.change)})
      .attr("r", 5)
-     .append("title")
-     .text(function(d){return d.penguin})
+     .on("mouseover", function(){d3.select(this).text(function(d){return d.penguin})})
  
   var yAxis=d3.axisLeft(yScale)
 
