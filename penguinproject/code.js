@@ -107,6 +107,11 @@ var yScale=d3.scaleLinear()
              .domain([-50,50])
              .range([h,margin.top])
              .nice();
+ 
+ // Define the div for the tooltip
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
 
 chart.selectAll("circle")
      .data(gradechange)
@@ -115,6 +120,19 @@ chart.selectAll("circle")
      .attr("cx", function(d,i){return xScale(i+1)})
      .attr("cy", function(d){return yScale(d.change)})
      .attr("r", 5)
+     .on("mouseover", function(d) {		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div.html(d.penguin)	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+            })					
+      .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        });
  
   var yAxis=d3.axisLeft(yScale)
 
