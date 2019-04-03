@@ -88,16 +88,16 @@ var gradechange1 = getGradechange(FgradeArray,HgradeArray)
 var gradechange = addlabels(gradechange1,penArray)
 console.log(gradechange)
 console.log(gradechange1)
-
-var div = d3.select("body").append("div")	
-    .attr("class", "tooltip")				
-    .style("opacity", 0);
  
 var svg = d3.select("body")
             .append("svg")
             .attr("width", screen.width)
             .attr("height", screen.height )
             .attr("id", "chart")
+
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
 
 var chart=svg.append("g")
              .attr('transform', 'translate(' + margin.left + ',' + margin.top+ ')')
