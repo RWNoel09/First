@@ -90,7 +90,7 @@ var xScale= d3.scaleLinear()
               .range([0,w]);
 
 var yScale=d3.scaleLinear()
-             .domain([0,50])
+             .domain([-50,50])
              .range([h,margin.top])
              .nice();
 
@@ -110,7 +110,8 @@ chart.selectAll("circle")
   .attr('transform', 'translate(' + 70 + ',' + margin.top + ')')
 
   var xAxis=d3.axisBottom(xScale)
-  
+              .ticks(23)
+              
   svg.append("g")
   .attr('id', 'xAxis')
   .call(xAxis)
