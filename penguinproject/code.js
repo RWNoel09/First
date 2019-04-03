@@ -7,7 +7,7 @@ drawScatterplot(data)
 var drawScatterplot = function(data){
 
 var screen={width:650,height:420};
- var margin = {top: 20, right: 10, bottom: 40, left: 70};
+ var margin = {top: 20, right: 50, bottom: 40, left: 70};
  var h=screen.height-margin.top-margin.bottom
  var w=screen.width-margin.right-margin.left
 
@@ -115,7 +115,7 @@ chart.selectAll("circle")
   svg.append("g")
   .attr('id', 'xAxis')
   .call(xAxis)
-  .attr('transform', 'translate(' + (margin.left)+ ',' + ((h/2)+margin.top+8) + ')')
+  .attr('transform', 'translate(' + (margin.left)+ ',' + ((h/2)+margin.top+10) + ')')
  
   svg.append("text")
   .attr('x',margin.left-40)
@@ -126,7 +126,7 @@ chart.selectAll("circle")
  
    svg.append("text")
   .attr('x',margin.left+w)
-  .attr('y',margin.top+(h/2)+8)
+  .attr('y',margin.top+(h/2)+10)
   .attr('id', 'Penguin')
   .text("Penguin")
   .style('font-size', 15)
