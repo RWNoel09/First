@@ -124,8 +124,8 @@ chart.selectAll("circle")
                 .duration(200)		
                 .style("opacity", .9);		
             div.text(d.penguin)	
-                .style("left", (d3.select(this).attr("cx")) + "px")		
-                .style("top", (d3.select(this).attr("cy")) + "px");	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
             })			
       .on("mouseout", function(d) {		
             div.transition()		
