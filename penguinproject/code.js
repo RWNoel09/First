@@ -60,7 +60,7 @@ var getFgradeArray=function(d){
   return HgradeArray 
  }
  
- var getGradechange =function(f,h){
+ var getGradechange=function(f,h){
   var changearray = h.map(function(d,i){
    var change = f[i] - d
    var perchange = (change/d)*100
@@ -68,7 +68,7 @@ var getFgradeArray=function(d){
   return changearray
  }
 
-var penArray:["Bookworm","Crafty","Cyclist","Drunken","Easter","EBook","Farmer","Gentleman","Judo","Moana","Painter","Grill","Pharoh","Pilot","Pinga","Pixie","Sailor","Santa","Tauch","Tux","ValentineO","Valentine","Wizard"]
+var penArray=["Bookworm","Crafty","Cyclist","Drunken","Easter","EBook","Farmer","Gentleman","Judo","Moana","Painter","Grill","Pharoh","Pilot","Pinga","Pixie","Sailor","Santa","Tauch","Tux","ValentineO","Valentine","Wizard"]
  
 var addlabels = function(c,p){
  var newarray = c.map(function(d,i){
