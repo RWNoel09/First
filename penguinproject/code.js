@@ -73,4 +73,5 @@ console.log(FgradeArray)
 var HgradeArray = getHgradeArray(data)
 console.log(HgradeArray)
 var gradechange1 = getGradechange(FgradeArray,HgradeArray)
+console.log(gradechange1)
 }
