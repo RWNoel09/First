@@ -112,7 +112,7 @@ chart.selectAll("circle")
      .data(gradechange)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i){return xScale(i)+1})
+     .attr("cx", function(d,i){return xScale(i+1)})
      .attr("cy", function(d){return yScale(d.change)})
      .attr("r", 5)
  
