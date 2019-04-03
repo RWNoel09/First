@@ -102,18 +102,18 @@ chart.selectAll("circle")
      .attr("cy", function(d){return yScale(d)})
      .attr("r", 5)
  
-   var yAxis=d3.axisLeft(yScale)
+  var yAxis=d3.axisLeft(yScale)
 
   svg.append("g")
   .attr('id', 'yAxis')
   .call(yAxis)
-  .attr('transform', 'translate(' + 65 + ',' + margin.top + ')')
+  .attr('transform', 'translate(' + 70 + ',' + margin.top + ')')
 
   var xAxis=d3.axisBottom(xScale)
   
   svg.append("g")
   .attr('id', 'xAxis')
   .call(xAxis)
-  .attr('transform', 'translate(' + (margin.left+20)+ ',' + (h+margin.top) + ')')
+  .attr('transform', 'translate(' + (margin.left)+ ',' + (h+margin.top) + ')')
 
 }
