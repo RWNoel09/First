@@ -84,12 +84,22 @@ var svg = d3.select("body")
 var chart=svg.append("g")
              .attr('transform', 'translate(' + margin.left + ',' + margin.top+ ')')
 
+var xScale= d3.scaleLinear()
+              .domain([0,23])
+              .nice()
+              .range([0,w]);
+
+var yScale=d3.scaleLinear()
+             .domain([0,50])
+             .range([h,margin.top])
+             .nice();
+
 chart.selectAll("circle")
      .data(gradechange1)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i){return i})
-     .attr("cy", function(d){return d})
+     .attr("cx", function(d,i){return xScale(i)})
+     .attr("cy", function(d){return yScale(d)})
      .attr("r", 2)
 
 }
