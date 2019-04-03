@@ -74,4 +74,22 @@ var HgradeArray = getHgradeArray(data)
 console.log(HgradeArray)
 var gradechange1 = getGradechange(FgradeArray,HgradeArray)
 console.log(gradechange1)
+ 
+var svg = d3.select("body")
+            .append("svg")
+            .attr("width", screen.width)
+            .attr("height", screen.height )
+            .attr("id", "chart")
+
+var chart=svg.append("g")
+             .attr('transform', 'translate(' + margin.left + ',' + margin.top+ ')')
+
+chart.selectAll("circle")
+     .data(gradechange1)
+     .enter()
+     .append("circle")
+     .attr("cx", function(d,i){return i})
+     .attr("cy", function(d){return d})
+     .attr("r", 2)
+
 }
