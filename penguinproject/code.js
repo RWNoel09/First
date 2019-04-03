@@ -63,7 +63,7 @@ var getFgradeArray=function(d){
  var getGradechange=function(f,h){
   var changearray = h.map(function(d,i){
    var change = f[i] - d
-   var perchange = parseInt((change/d)*100)
+   var perchange = (change/d)*100
    return perchange})
   return changearray
  }
@@ -73,7 +73,7 @@ var penArray=["Bookworm","Crafty","Cyclist","Drunken","Easter","EBook","Farmer",
 var addlabels = function(c,p){
  var newarray = c.map(function(d,i){
   return {
-   change: d[i],
+   change: c[i],
    penguin: p[i]
   }
  })
