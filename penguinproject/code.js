@@ -110,12 +110,12 @@ chart.selectAll("circle")
   .attr('transform', 'translate(' + 70 + ',' + margin.top + ')')
 
   var xAxis=d3.axisBottom(xScale)
-              .ticks(23)
+              .ticks(0)
               
   svg.append("g")
   .attr('id', 'xAxis')
   .call(xAxis)
-  .attr('transform', 'translate(' + (margin.left)+ ',' + ((h/2)+margin.top) + ')')
+  .attr('transform', 'translate(' + (margin.left)+ ',' + ((h/2)+margin.top+5) + ')')
  
   svg.append("text")
   .attr('x',margin.left-40)
