@@ -27,7 +27,7 @@ var drawBubble = function(mbsData){
  var newarray = data.map(function(d,i){
 	return {
 	 date: data.d[0],
-	 mbs: data.d.[1]
+	 mbs: data.d[1]
 	}
  })
  return newarray
