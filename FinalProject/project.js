@@ -9,5 +9,5 @@ Promise.all([mbsP,mdP])
        })
 
 var drawBubble = function(mbsData){
-  console.log(mbsdata)
+  console.log(mbsData)
 }
