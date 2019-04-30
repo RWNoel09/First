@@ -52,6 +52,12 @@ var drawBubble = function(mbsData,date){
  arcs.append("path")
      .attr("fill", "green")
      .attr("d", arc)
+ arcs.append("text")
+    .attr("transform", function(d) {
+         return "translate(" + arc.centroid(d) + ")";})
+ .attr("text-anchor","middle")
+ .text(function(d) {
+	 return mbsVal.mbs;});
 
  
 }
