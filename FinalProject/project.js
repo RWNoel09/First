@@ -9,7 +9,20 @@ Promise.all([mbsP,mdP])
        })
 
 var drawBubble = function(mbsData){
+	
+ var screen={width:800,height:500};
+ var margin = {top: 20, right: 60, bottom: 40, left: 70};
+ var h=screen.height-margin.top-margin.bottom
+ var w=screen.width-margin.right-margin.left
+ var date = 0
+ 
  console.log(mbsData)
+	
+ var svg = d3.select("body")
+ 	     .append("svg")
+ 	     .attr("width",w)
+             .attr("height",h)
+	
  var createArray = function(data){
  var newarray = data.map(function(d,i){
 	return {
@@ -20,6 +33,21 @@ var drawBubble = function(mbsData){
  return newarray
 }
 
-var mbsArray = createArray(mbsData)
-console.log(mbsArray)
+  var bubble = d3.pie();
+  var outerRadius = 1.9452197*mbsData.mbs[date];
+  var innerRadius = 0;
+  var arc = d3.arc()
+	      .innerRadius(innerRadius)
+	      .outerRadius(outerRadius)
+  var arcs = svg.selectAll("g.arc")
+		.data(bubble(mbsData.mbs[date]))
+  		.enter()
+  		.append("g")
+  		.attr("class","arc")
+  		.attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
+ arcs.append("path")
+     .attr("fill", "green")
+     .attr("d", arc)
+
+ 
 }
