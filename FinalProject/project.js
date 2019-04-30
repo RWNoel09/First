@@ -24,18 +24,6 @@ var drawBubble = function(mbsData,date){
  	     .attr("width",w)
              .attr("height",h)
 	
- var createArray = function(data){
- var newarray = data.map(function(d,i){
-	return {
-	 date: d[0],
-	 mbs: d[1]
-	}
- })
- return newarray
-}
- 
-  var mbsArray = createArray(mbsData)
-  console.log(mbsArray)
   var bubble = d3.pie();
   var mbsVal = mbsData[date]
   var outerRadius = 1.9452197*mbsVal.mbs;
