@@ -5,16 +5,17 @@ Promise.all([mbsP,mdP])
        .then(function(values){
        var mbsData = values[0]
        var mdData = values[1]
-       drawBubble(mbsData)
+       var date = 0
+       drawBubble(mbsData,date)
        })
 
-var drawBubble = function(mbsData){
+var drawBubble = function(mbsData,date){
 	
  var screen={width:800,height:500};
  var margin = {top: 20, right: 60, bottom: 40, left: 70};
  var h=screen.height-margin.top-margin.bottom
  var w=screen.width-margin.right-margin.left
- var date = 0
+ 
  
  console.log(mbsData)
 	
@@ -36,7 +37,8 @@ var drawBubble = function(mbsData){
   var mbsArray = createArray(mbsData)
   console.log(mbsArray)
   var bubble = d3.pie();
-  var outerRadius = 1.9452197*mbsData.mbs[date];
+  var mbsVal = mbsData[date]
+  var outerRadius = 1.9452197*mbsVal.mbs;
   var innerRadius = 0;
   var arc = d3.arc()
 	      .innerRadius(innerRadius)
