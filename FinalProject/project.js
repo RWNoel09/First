@@ -9,7 +9,7 @@ Promise.all([mbsP,mdP])
        })
 
 var drawBubble = function(mbsData){
- 
+ console.log(mbsData)
  var createArray = function(data){
  var newarray = data.map(function(d,i){
 	return {
