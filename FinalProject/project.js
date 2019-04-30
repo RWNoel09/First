@@ -9,5 +9,17 @@ Promise.all([mbsP,mdP])
        })
 
 var drawBubble = function(mbsData){
-  console.log(mbsData)
+ 
+ var createArray = function(data){
+ var newarray = data.map(function(d,i){
+	return {
+	 date: data.DATE[i],
+	 mbs: data.mbs[i]
+	}
+ })
+ return newarray
+}
+
+var mbsArray = createArray(mbsData)
+console.log(mbsArray)
 }
