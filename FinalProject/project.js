@@ -39,6 +39,8 @@ var drawBubble = function(mbsData,date){
  	     .append("svg")
  	     .attr("width",w)
              .attr("height",h)
+ console.log(valArray)
+ console.log(dateArray)
 
   var mbsTotal = mbsAcum(mbsData,date)
   console.log(mbsTotal)
@@ -78,6 +80,10 @@ var drawBubble = function(mbsData,date){
    yScale = d3.scaleLinear()
               .domain([0, d3.max(valArray, function(d) {return d;})])
               .range([h,0]);
+       
+   var line = d3.line()
+                .x(function(d){return xScale(d)})
+                .y(function(d){return yScale(d)})
 
 
 }
