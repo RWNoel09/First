@@ -5,7 +5,7 @@ Promise.all([mbsP,mdP])
        .then(function(values){
        var mbsData = values[0]
        var mdData = values[1]
-       var date = 1
+       var date = 0
        drawBubble(mbsData,date)
        })
 
@@ -52,7 +52,7 @@ var drawBubble = function(mbsData,date){
      .append("circle")
      .attr("cx", 200)
      .attr("cy", 250)
-     .attr("r", bubbleVal*1.9452197)
+     .attr("r", bubbleVal)
      .attr("fill", "green")
        
    svg.selectAll("text")
@@ -61,6 +61,11 @@ var drawBubble = function(mbsData,date){
        .append("text")
        .text(function(d){
               return bubbleVal;})
+       .attr("x", 200)
+       .attr("y", 250)
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "15px")
+       .attr("fill", "black");
 
 
    xScale = d3.scaleTime()
