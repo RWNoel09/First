@@ -45,15 +45,22 @@ var drawBubble = function(mbsData,date){
   var bubbleVal = mbsTotal.reduce(function(total, amount){
             return total + amount})
   console.log(bubbleVal)
-
+  var bubbleArray = [1]
   svg.selectAll("circle")
-     .data()
+     .data(bubbleArray)
      .enter()
      .append("circle")
      .attr("cx", 200)
      .attr("cy", 250)
      .attr("r", bubbleVal*1.9452197)
      .attr("fill", "green")
+       
+   svg.selectAll("text")
+       .data(bubbleArray)
+       .enter()
+       .append("text")
+       .text(function(d){
+              return bubbleVal;})
 
 
    xScale = d3.scaleTime()
