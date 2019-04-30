@@ -44,7 +44,7 @@ var drawBubble = function(mbsData,date){
 	      .innerRadius(innerRadius)
 	      .outerRadius(outerRadius)
   var arcs = svg.selectAll("g.arc")
-		.data(bubble(mbsData.mbs[date]))
+		.data(bubble(mbsVal.mbs))
   		.enter()
   		.append("g")
   		.attr("class","arc")
