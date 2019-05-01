@@ -29,9 +29,17 @@ var drawBubbles = function(mbsData,mdData,incomeData,securData,unemployData,date
  var dateArray = mbsData.map(function(mbsData){
    return new Date(mbsData.DATE);
  })
-
  var mdarray = mdData.map(function(mdData){
    return parseFloat(mdData.mdebt);
+ }) 
+ var inArray = incomeData.map(function(incomeData){
+   return parseFloat(incomeData.income);
+ })
+  var securArray = securData.map(function(securData){
+   return parseFloat(securData.secur);
+ })
+  var unemployArray = unemployData.map(function(unemployData){
+   return parseFloat(unemployData.unemploy);
  })
 
 var combine = function(d,v,m,n,s,u){
@@ -48,7 +56,7 @@ var combine = function(d,v,m,n,s,u){
   return newarray
 }
  
- var bubbleArray = combine(dateArray,valArray,mdarray)
+ var bubbleArray = combine(dateArray,valArray,mdarray,inArray,securArray,unemployArray)
  console.log(bubbleArray)
  var mbsAcum = function(mbsData,date){
    mbsArray1 = mbsData.slice(0,date+1)
@@ -66,6 +74,7 @@ var combine = function(d,v,m,n,s,u){
 
 
   var mbsTotal = mbsAcum(mbsData,date)
+  console.log(mbsTotal)
   var bubbleVal = mbsTotal.reduce(function(total, amount){
             return total + amount})
   console.log(bubbleVal)
