@@ -89,10 +89,10 @@ var colors = ["orange","pink","green","blue","red" ]
      .data(circlearray)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i) { return (i*180);})
+     .attr("cx", function(d,i) { return (i*180) + 100;})
      .attr("cy", 250)
      .attr("r", function(d,i){
-       return Math.sqrt(d);
+       return Math.sqrt(d)*10;
      })
      .attr("fill", function(d,i) { return colors[i];})
 
@@ -102,7 +102,7 @@ var colors = ["orange","pink","green","blue","red" ]
        .append("text")
        .text(function(d){
               return d;})
-       .attr("x", 200)
+       .attr("cx", function(d,i) { return (i*180) + 100;})
        .attr("y", 250)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
