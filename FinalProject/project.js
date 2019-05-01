@@ -61,7 +61,7 @@ var combine = function(d,v,m,n,s,u){
   return newarray
 }
  
-var colors = ["orange","pink","green","blue","red" ]
+var colors = ["orange","pink","green","teal","red" ]
  var bubbleArray = combine(dateArray,valArray,mdarray,inArray,securArray,unemployArray)
  console.log(bubbleArray)
  var mbsAcum = function(mbsData,date){
