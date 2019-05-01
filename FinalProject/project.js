@@ -74,16 +74,16 @@ var combine = function(d,v,m,n,s,u){
 
 
   var mbsTotal = mbsAcum(mbsData,date)
-  console.log(mbsTotal)
   var bubbleVal = mbsTotal.reduce(function(total, amount){
             return total + amount})
-  console.log(bubbleVal)
-  var circlearray = [bubbleVal]
+
+  var circlearray = [valArray[date],mdarray[date],inArray[date],securArray[date],unemployArray[date]]
+  console.log(circlearray)
   svg.selectAll("circle")
-     .data(circlearray)
+     .data(bubbleArray)
      .enter()
      .append("circle")
-     .attr("cx", 200)
+     .attr("cx", function(d,i) { return (180)})
      .attr("cy", 250)
      .attr("r", function(bubbleVal){
        return Math.sqrt(bubbleVal);
