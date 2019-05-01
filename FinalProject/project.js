@@ -130,6 +130,36 @@ var colors = ["orange","pink","green","teal","red" ]
       .attr("class","line")
       .attr("d", line);
 
+//timeline
+  var timeScale= d3.scaleLinear()
+                   .domain([0,56])
+                   .range([0,1250]);
+       
+  var timeline = d3.select("body").append("svg")
+       .attr('width', 1250)
+       .attr('height', 320)
+       .attr('id', 'timeline')
+  
+  var time1 = timeline.append("g").attr('id', 'time1')
 
+  time1.selectAll("text").data(dateArray.slice(0,57))
+       .enter()
+       .append("text")
+       .attr('x', function(d,i){
+         return timeScale(i)})
+       .attr('y',30)
+       .attr('id',function(d){return "date"+(d+1)} )
+       .text(function(d){return d+1})
+                               
+  var time2 = timeline.append("g").attr('id', 'time2')
+
+  time2.selectAll("text").data(dateArray.slice(57,113))
+       .enter()
+       .append("text")
+       .attr('x', function(d,i){
+         return timeScale(i)})
+       .attr('y',80)
+       .attr('id',function(d){return "date"+(d+57)} )
+       .text(function(d){return d+57})                          
 
 }
