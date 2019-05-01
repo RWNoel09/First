@@ -1,5 +1,7 @@
 var mbsP = d3.csv("mbs1.csv")
 var mdP = d3.csv("md.csv")
+var incomeP = d3.csv("income.csv")
+
 
 Promise.all([mbsP,mdP])
        .then(function(values){
