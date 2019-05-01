@@ -147,7 +147,7 @@ var colors = ["orange","pink","green","teal","red" ]
        .append("text")
        .attr('x', function(d,i){
          return timeScale(i)})
-       .attr('y',30)
+       .attr('y',10)
        .attr('id',function(d){return "date"+(d+1)} )
        .text(function(d){return d+1})
                                
@@ -158,8 +158,19 @@ var colors = ["orange","pink","green","teal","red" ]
        .append("text")
        .attr('x', function(d,i){
          return timeScale(i)})
-       .attr('y',80)
+       .attr('y',115)
        .attr('id',function(d){return "date"+(d+57)} )
-       .text(function(d){return d+57})                          
+       .text(function(d){return d+57}) 
+       
+  var time3=timeline.append("g").attr('id', 'time3')
+
+  time3.selectAll("text").data(dateArray.slice(113,170)
+       .enter()
+       .append("text")
+       .attr('x', function(d,i){
+         return timeScale(i)})
+       .attr('y',120)
+       .attr('id',function(d){return "date"+(d+113)} )
+       .text(function(d){return d+113})
 
 }
