@@ -42,7 +42,7 @@ var combine = function(d,v,m){
   })
   return newarray
 }
- console.log(mdarray)
+ 
  var bubbleArray = combine(dateArray,valArray,mdarray)
  console.log(bubbleArray)
  var mbsAcum = function(mbsData,date){
