@@ -102,7 +102,7 @@ var colors = ["orange","pink","green","blue","red" ]
        .append("text")
        .text(function(d){
               return d;})
-       .attr("cx", function(d,i) { return (i*180) + 100;})
+       .attr("x", function(d,i) { return (i*180) + 100;})
        .attr("y", 250)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
