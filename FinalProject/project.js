@@ -5,29 +5,48 @@ Promise.all([mbsP,mdP])
        .then(function(values){
        var mbsData = values[0]
        var mdData = values[1]
-       var date = 0
-       drawBubble(mbsData,date)
+       var date = 5
+       drawBubbles(mbsData,mdData,date)
        })
 
-var drawBubble = function(mbsData,date){
+var drawBubbles = function(mbsData,mdData,date){
 
  var screen={width:800,height:500};
  var margin = {top: 20, right: 60, bottom: 40, left: 70};
  var h=screen.height-margin.top-margin.bottom
  var w=screen.width-margin.right-margin.left
 
-
- console.log(mbsData)
  var valArray = mbsData.map(function(mbsData){
    return parseFloat(mbsData.mbs);
  })
  var dateArray = mbsData.map(function(mbsData){
-   return mbsData.DATE;
+   return new Date(mbsData.DATE);
  })
 
+ var mdarray = mdData.map(function(mdData){
+   return parseFloat(mdData.MDOTHIOH);
+ })
+
+var combine = function(d,v,m){
+  var newarray = d.map(function(d,i){
+    return {
+      Date: d,
+      mbs: v[i],
+      mdebt: function(i){
+        if (i = 0 || i % 3 == 0) {
+        return m[i];
+      }
+      else { return 0;}
+      }
+    }
+  })
+  return newarray
+}
+
+ var bubbleArray = combine(dateArray,valArray,mdarray)
+ console.log(bubbleArray)
  var mbsAcum = function(mbsData,date){
    mbsArray1 = mbsData.slice(0,date+1)
-   console.log(mbsArray1)
    mbsArray = mbsArray1.map(function(mbsData,i){
      if (date >= i) {
               return parseFloat(mbsData.mbs);}
@@ -39,29 +58,29 @@ var drawBubble = function(mbsData,date){
  	     .append("svg")
  	     .attr("width",w)
              .attr("height",h)
- console.log(valArray)
- console.log(dateArray)
+
 
   var mbsTotal = mbsAcum(mbsData,date)
-  console.log(mbsTotal)
   var bubbleVal = mbsTotal.reduce(function(total, amount){
             return total + amount})
   console.log(bubbleVal)
-  var bubbleArray = [1]
+  var circlearray = [bubbleVal]
   svg.selectAll("circle")
-     .data(bubbleArray)
+     .data(circlearray)
      .enter()
      .append("circle")
      .attr("cx", 200)
      .attr("cy", 250)
-     .attr("r", bubbleVal)
+     .attr("r", function(bubbleVal){
+       return Math.sqrt(bubbleVal);
+     })
      .attr("fill", "green")
-       
+
    svg.selectAll("text")
-       .data(bubbleArray)
+       .data(circlearray)
        .enter()
        .append("text")
-       .text(function(d){
+       .text(function(bubbleVal){
               return bubbleVal;})
        .attr("x", 200)
        .attr("y", 250)
@@ -72,18 +91,25 @@ var drawBubble = function(mbsData,date){
 
    xScale = d3.scaleTime()
               .domain([
-                d3.min(dateArray, function(d){ return d;}),
-                d3.max(dateArray, function(d){ return d;})
+                d3.min(bubbleArray, function(d){ return d.Date;}),
+                d3.max(bubbleArray, function(d){ return d.Date;})
               ])
               .range([400,w]);
 
    yScale = d3.scaleLinear()
-              .domain([0, d3.max(valArray, function(d) {return d;})])
+              .domain([0, d3.max(bubbleArray, function(d) { return d.mbs;})])
               .range([h,0]);
-       
+
    var line = d3.line()
-                .x(function(d){return xScale(d)})
-                .y(function(d){return yScale(d)})
+                .x(function(d){return xScale(bubbleArray.Date);})
+                .y(function(d){return yScale(bubbleArray.mbs);})
+
+  console.log(bubbleArray.slice(0,date+1))
+   svg.append("path")
+      .datum(bubbleArray.slice(0,date+1))
+      .attr("class","line")
+      .attr("d", line);
+
 
 
 }
