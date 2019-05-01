@@ -24,22 +24,27 @@ var drawBubbles = function(mbsData,mdData,incomeData,securData,unemployData,date
  var w=screen.width-margin.right-margin.left
 
  var valArray = mbsData.map(function(mbsData){
-   return parseFloat(mbsData.mbs);
+   var val = parseFloat(mbsData.mbs)
+   return val;
  })
  var dateArray = mbsData.map(function(mbsData){
    return new Date(mbsData.DATE);
  })
  var mdarray = mdData.map(function(mdData){
-   return parseFloat(mdData.mdebt);
+   var md = parseFloat(mdData.mdebt)
+   return (md/100000);
  }) 
  var inArray = incomeData.map(function(incomeData){
-   return parseFloat(incomeData.income);
+   var inc = parseFloat(incomeData.income)
+   return (inc/10000);
  })
   var securArray = securData.map(function(securData){
-   return parseFloat(securData.secur);
+   var sec = parseFloat(securData.secur)
+   return (sec/1000000);
  })
   var unemployArray = unemployData.map(function(unemployData){
-   return parseFloat(unemployData.unemploy);
+   var un = parseFloat(unemployData.unemploy)
+   return (un/1000);
  })
 
 var combine = function(d,v,m,n,s,u){
