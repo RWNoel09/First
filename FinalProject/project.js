@@ -2,20 +2,23 @@ var mbsP = d3.csv("mbs1.csv")
 var mdP = d3.csv("md.csv")
 var incomeP = d3.csv("income.csv")
 var totsecuritiesP = d3.csv("totsecurities.csv")
-var unemployP = d3.csv("unemploy.csv")
+var unemployP = d3.csv("unemployment.csv")
 
 
-Promise.all([mbsP,mdP])
+Promise.all([mbsP,mdP,incomeP,totsecuritiesP,unemployP])
        .then(function(values){
        var mbsData = values[0]
        var mdData = values[1]
+       var incomeData = values[2]
+       var securData = values[3]
+       var unemployData = values[4]
        var date = 5
-       drawBubbles(mbsData,mdData,date)
+       drawBubbles(mbsData,mdData,incomeData,securData,unemployData,date)
        })
 
-var drawBubbles = function(mbsData,mdData,date){
+var drawBubbles = function(mbsData,mdData,incomeData,securData,unemployData,date){
 
- var screen={width:800,height:500};
+ var screen={width:1000,height:750};
  var margin = {top: 20, right: 60, bottom: 40, left: 70};
  var h=screen.height-margin.top-margin.bottom
  var w=screen.width-margin.right-margin.left
