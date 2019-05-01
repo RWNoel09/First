@@ -61,6 +61,7 @@ var combine = function(d,v,m,n,s,u){
   return newarray
 }
  
+var colors = ["orange","pink","green","blue","red" ]
  var bubbleArray = combine(dateArray,valArray,mdarray,inArray,securArray,unemployArray)
  console.log(bubbleArray)
  var mbsAcum = function(mbsData,date){
@@ -88,12 +89,12 @@ var combine = function(d,v,m,n,s,u){
      .data(circlearray)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i) { return (i*180)})
+     .attr("cx", function(d,i) { return (i*180);})
      .attr("cy", 250)
      .attr("r", function(d,i){
        return Math.sqrt(d);
      })
-     .attr("fill", "green")
+     .attr("fill", function(d,i) { return colors[i];})
 
    svg.selectAll("text")
        .data(circlearray)
