@@ -24,7 +24,7 @@ var drawBubbles = function(mbsData,mdData,date){
  })
 
  var mdarray = mdData.map(function(mdData){
-   return parseFloat(mdData.MDOTHIOH);
+   return parseFloat(mdData.mdebt);
  })
 
 var combine = function(d,v,m){
