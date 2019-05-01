@@ -34,17 +34,15 @@ var drawBubbles = function(mbsData,mdData,incomeData,securData,unemployData,date
    return parseFloat(mdData.mdebt);
  })
 
-var combine = function(d,v,m){
+var combine = function(d,v,m,n,s,u){
   var newarray = d.map(function(d,i){
     return {
       Date: d,
       mbs: v[i],
-      mdebt: function(d,i){
-        if (i = 0 || i % 3 == 0) {
-        return m[i];
-      }
-      else { return 0;}
-      }
+      mdebt: m[i],
+      income: n[i],
+      secur: s[i],
+      unemploy: u[i]
     }
   })
   return newarray
