@@ -88,7 +88,7 @@ var combine = function(d,v,m,n,s,u){
      .data(circlearray)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i) { return (180)})
+     .attr("cx", function(d,i) { return (i*180)})
      .attr("cy", 250)
      .attr("r", function(d,i){
        return Math.sqrt(d);
