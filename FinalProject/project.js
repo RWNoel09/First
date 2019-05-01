@@ -80,13 +80,13 @@ var combine = function(d,v,m,n,s,u){
   var circlearray = [valArray[date],mdarray[date],inArray[date],securArray[date],unemployArray[date]]
   console.log(circlearray)
   svg.selectAll("circle")
-     .data(bubbleArray)
+     .data(circlearray)
      .enter()
      .append("circle")
      .attr("cx", function(d,i) { return (180)})
      .attr("cy", 250)
-     .attr("r", function(bubbleVal){
-       return Math.sqrt(bubbleVal);
+     .attr("r", function(d,i){
+       return Math.sqrt(d);
      })
      .attr("fill", "green")
 
@@ -94,8 +94,8 @@ var combine = function(d,v,m,n,s,u){
        .data(circlearray)
        .enter()
        .append("text")
-       .text(function(bubbleVal){
-              return bubbleVal;})
+       .text(function(d){
+              return d;})
        .attr("x", 200)
        .attr("y", 250)
        .attr("font-family", "sans-serif")
