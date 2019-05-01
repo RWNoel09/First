@@ -1,6 +1,8 @@
 var mbsP = d3.csv("mbs1.csv")
 var mdP = d3.csv("md.csv")
 var incomeP = d3.csv("income.csv")
+var totsecuritiesP = d3.csv("totsecurities.csv")
+var unemployP = d3.csv("unemploy.csv")
 
 
 Promise.all([mbsP,mdP])
