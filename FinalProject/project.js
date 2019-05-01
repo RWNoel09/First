@@ -32,7 +32,7 @@ var combine = function(d,v,m){
     return {
       Date: d,
       mbs: v[i],
-      mdebt: console.log(m[i]), function(d,i){
+      mdebt: function(d,i){
         if (i = 0 || i % 3 == 0) {
         return m[i];
       }
@@ -42,7 +42,7 @@ var combine = function(d,v,m){
   })
   return newarray
 }
-
+ console.log(mdarray)
  var bubbleArray = combine(dateArray,valArray,mdarray)
  console.log(bubbleArray)
  var mbsAcum = function(mbsData,date){
