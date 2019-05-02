@@ -158,7 +158,7 @@ var colors = ["green","pink","orange","teal","red" ]
   legend.selectAll("text").data(bubb)
         .enter()
         .append("text")
-        .attr("x", function(d,i){return (i*250) + 100})
+        .attr("x", function(d,i){return (i*250) + 110})
         .attr("y", 40)
         .attr("id", function(d,i){ return d})
         .text(function(d){return d})
