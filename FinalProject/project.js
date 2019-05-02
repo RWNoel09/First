@@ -61,7 +61,7 @@ var combine = function(d,v,m,n,s,u){
   return newarray
 }
  
-var colors = ["orange","pink","green","teal","red" ]
+var colors = ["green","pink","orange","teal","red" ]
  var bubbleArray = combine(dateArray,valArray,mdarray,inArray,securArray,unemployArray)
  console.log(bubbleArray)
  var mbsAcum = function(mbsData,date){
@@ -83,7 +83,7 @@ var colors = ["orange","pink","green","teal","red" ]
   var bubbleVal = mbsTotal.reduce(function(total, amount){
             return total + amount})
 
-  var circlearray = [valArray[date],mdarray[date],inArray[date],securArray[date],unemployArray[date]]
+  var circlearray = [inArray[date],mdarray[date],valArray[date],securArray[date],unemployArray[date]]
   console.log(circlearray)
   svg.selectAll("circle")
      .data(circlearray)
