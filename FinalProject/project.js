@@ -144,9 +144,9 @@ var colors = ["green","pink","orange","teal","red" ]
        .attr('height', 320)
        .attr('id', 'timeline')
   
-  var bubb = ["Income", "Mortgage-Backed Securities", "Total Debt Securities", "Unemployment"]
+  var bubb = ["Income","Mortgage Debt","Mortgage-Backed Securities","Total Debt Securities","Unemployment"]
   var legend = timeline.append("g").attr('id', "legend")
-  legend.selectAll("rect").data(circlearray)
+  legend.selectAll("rect").data(bubb)
         .enter()
         .append("rect")
         .attr("x", function(d,i) { return i*50};)
