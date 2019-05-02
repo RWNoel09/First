@@ -159,7 +159,7 @@ var colors = ["orange","pink","green","teal","red" ]
               d3.selectAll("circle").remove()
               date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
               console.log(date)
-          }
+          })
               
                                
   var time2 = timeline.append("g").attr('id', 'time2')
