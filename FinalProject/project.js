@@ -149,7 +149,7 @@ var colors = ["green","pink","orange","teal","red" ]
   legend.selectAll("rect").data(bubb)
         .enter()
         .append("rect")
-        .attr("x", function(d,i){return (i*75) + 5})
+        .attr("x", function(d,i){return (i*200) + 5})
         .attr("y", 10)
         .attr("width", 20)
         .attr("height", 20)
@@ -158,7 +158,7 @@ var colors = ["green","pink","orange","teal","red" ]
   legend.selectAll("text").data(bubb)
         .enter()
         .append("text")
-        .attr("x", function(d,i){return (i*100) + 10})
+        .attr("x", function(d,i){return (i*150) + 10})
         .attr("y", 70)
         .attr("id", function(d,i){ return d})
         .text(function(d){return d})
@@ -173,7 +173,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .append("text")
        .attr('x', function(d,i){
          return timeScale(i)})
-       .attr('y',70)
+       .attr('y',100)
        .attr('id',function(d,i){return i} )
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
@@ -232,7 +232,7 @@ var colors = ["green","pink","orange","teal","red" ]
      .enter()
      .append("circle")
      .attr("cx", function(d,i) { return (i*180) + 100;})
-     .attr("cy", 250)
+     .attr("cy", 200)
      .attr("r", function(d,i){
        return Math.sqrt(d)*10;
      })
