@@ -107,7 +107,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
-       .attr("fill", "black")
+       .attr("fill", "white")
        .attr("id", "bubtext");
 
 
@@ -180,7 +180,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
-       .attr("fill", "black")
+       .attr("fill", "white")
        .attr("id", "timetext")
        .on("click",function(){
               d3.selectAll("circle").remove()
@@ -251,7 +251,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
-       .attr("fill", "black")
+       .attr("fill", "white")
        .attr("id", "bubtext");
          
           })
@@ -269,7 +269,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
-       .attr("fill", "black")
+       .attr("fill", "white")
        .attr("id", "timetext")
        .on("click",function(){
               d3.selectAll("circle").remove()
@@ -340,7 +340,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
-       .attr("fill", "black")
+       .attr("fill", "white")
        .attr("id", "bubtext");
          
           })
@@ -357,7 +357,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
-       .attr("fill", "black")
+       .attr("fill", "white")
        .attr("id", "timetext")
        .on("click",function(){
               d3.selectAll("circle").remove()
@@ -428,7 +428,7 @@ var combine = function(d,v,m,n,s,u){
        .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
-       .attr("fill", "black")
+       .attr("fill", "white")
        .attr("id", "bubtext");
          
           })
