@@ -76,7 +76,8 @@ var colors = ["green","pink","orange","teal","red" ]
  var svg = d3.select("body")
  	     .append("svg")
  	     .attr("width",w)
-             .attr("height",h)
+            .attr("height",h)
+            .attr("id", "plot")
 
 
   var mbsTotal = mbsAcum(mbsData,date)
