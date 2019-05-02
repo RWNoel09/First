@@ -161,6 +161,73 @@ var colors = ["orange","pink","green","teal","red" ]
               d3.selectAll("text#bubtext").remove()
               date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
               console.log(date)
+  
+   var valArray = mbsData.map(function(mbsData){
+   var val = parseFloat(mbsData.mbs)
+   return val;
+ })
+ var dateArray = mbsData.map(function(mbsData){
+   return new Date(mbsData.DATE);
+ })
+ var mdarray = mdData.map(function(mdData){
+   var md = parseFloat(mdData.mdebt)
+   return (md/100000);
+ }) 
+ var inArray = incomeData.map(function(incomeData){
+   var inc = parseFloat(incomeData.income)
+   return (inc/10000);
+ })
+  var securArray = securData.map(function(securData){
+   var sec = parseFloat(securData.secur)
+   return (sec/1000000);
+ })
+  var unemployArray = unemployData.map(function(unemployData){
+   var un = parseFloat(unemployData.unemploy)
+   return (un/1000);
+ })
+
+var combine = function(d,v,m,n,s,u){
+  var newarray = d.map(function(d,i){
+    return {
+      Date: d,
+      mbs: v[i],
+      mdebt: m[i],
+      income: n[i],
+      secur: s[i],
+      unemploy: u[i]
+    }
+  })
+  return newarray
+}
+ 
+var colors = ["orange","pink","green","teal","red" ]       
+         
+  var circlearray = [valArray[date],mdarray[date],inArray[date],securArray[date],unemployArray[date]]
+  console.log(circlearray)
+  svg.selectAll("circle")
+     .data(circlearray)
+     .enter()
+     .append("circle")
+     .attr("cx", function(d,i) { return (i*180) + 100;})
+     .attr("cy", 250)
+     .attr("r", function(d,i){
+       return Math.sqrt(d)*10;
+     })
+     .attr("fill", function(d,i) { return colors[i];})
+
+   svg.selectAll("text")
+       .data(circlearray)
+       .enter()
+       .append("text")
+       .text(function(d){
+              return d;})
+       .attr("x", function(d,i) { return (i*180) + 100;})
+       .attr("y", 250)
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "15px")
+       .attr("fill", "black")
+       .attr("id", "bubtext");
+         
           })
               
                                
