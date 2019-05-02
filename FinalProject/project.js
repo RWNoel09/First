@@ -19,7 +19,7 @@ Promise.all([mbsP,mdP,incomeP,totsecuritiesP,unemployP])
 var drawBubbles = function(mbsData,mdData,incomeData,securData,unemployData,date){
 
  var screen={width:1300,height:400};
- var margin = {top: 20, right: 60, bottom: 40, left: 70};
+ var margin = {top: 20, right: 50, bottom: 20, left: 50};
  var h=screen.height-margin.top-margin.bottom
  var w=screen.width-margin.right-margin.left
 
