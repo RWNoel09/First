@@ -106,7 +106,8 @@ var colors = ["orange","pink","green","teal","red" ]
        .attr("y", 250)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
-       .attr("fill", "black");
+       .attr("fill", "black")
+       .attr("id", "bubtext");
 
 
    xScale = d3.scaleTime()
@@ -157,6 +158,7 @@ var colors = ["orange","pink","green","teal","red" ]
        .attr("fill", "black")
        .on("click",function(){
               d3.selectAll("circle").remove()
+              d3.selectAll("bubtext").remove()
               date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
               console.log(date)
           })
