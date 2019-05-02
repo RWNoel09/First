@@ -154,7 +154,13 @@ var colors = ["orange","pink","green","teal","red" ]
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
-       .attr("fill", "black");
+       .attr("fill", "black")
+       .on("click",function(){
+              d3.selectAll("circle").remove()
+              date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
+              console.log(date)
+
+              
                                
   var time2 = timeline.append("g").attr('id', 'time2')
 
