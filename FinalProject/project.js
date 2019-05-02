@@ -166,6 +166,7 @@ var colors = ["green","pink","orange","teal","red" ]
         .attr("font-family", "sans-serif")
         .attr("font-size", "10px")
         .attr("fill", "black")
+        .attr("id", "legtext")
   
   var time1 = timeline.append("g").attr('id', 'time1')
 
@@ -180,6 +181,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
        .attr("fill", "black")
+       .attr("id", "timetext")
        .on("click",function(){
               d3.selectAll("circle").remove()
               d3.selectAll("text#bubtext").remove()
@@ -268,6 +270,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
        .attr("fill", "black")
+       .attr("id", "timetext")
        .on("click",function(){
               d3.selectAll("circle").remove()
               d3.selectAll("text#bubtext").remove()
@@ -355,7 +358,8 @@ var colors = ["green","pink","orange","teal","red" ]
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
        .attr("fill", "black")
-             .on("click",function(){
+       .attr("id", "timetext")
+       .on("click",function(){
               d3.selectAll("circle").remove()
               d3.selectAll("text#bubtext").remove()
               date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
