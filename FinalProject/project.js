@@ -149,7 +149,7 @@ var colors = ["green","pink","orange","teal","red" ]
   legend.selectAll("rect").data(circlearray)
         .enter()
         .append("rect")
-        .attr("x", function(d,i){ return (i*50)};)
+        .attr("x", function(d,i) { return i*50};)
         .attr("y", 10)
         .attr("width", 20)
         .attr("height", 20)
