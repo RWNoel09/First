@@ -131,9 +131,11 @@ var colors = ["orange","pink","green","teal","red" ]
       .attr("d", line);
 
 //timeline
-  var timeScale= d3.scaleLinear()
+  var timeScale = d3.scaleLinear()
                    .domain([0,56])
                    .range([0,1250]);
+       
+  var formatTime = d3.timeFormat("%b %y");
        
   var timeline = d3.select("body").append("svg")
        .attr('width', 1250)
@@ -146,10 +148,10 @@ var colors = ["orange","pink","green","teal","red" ]
        .enter()
        .append("text")
        .attr('x', function(d,i){
-         return timeScale(i)})
+         return timescale(i)})
        .attr('y',10)
-       .attr('id',function(d){return "date"+(d+1)} )
-       .text(function(d){return d+1})
+       .attr('id',function(d){return d} )
+       .text(function(d){return formatTime(d)})
                                
   var time2 = timeline.append("g").attr('id', 'time2')
 
@@ -157,20 +159,20 @@ var colors = ["orange","pink","green","teal","red" ]
        .enter()
        .append("text")
        .attr('x', function(d,i){
-         return timeScale(i)})
+         return timescale(i)})
        .attr('y',115)
-       .attr('id',function(d){return "date"+(d+57)} )
-       .text(function(d){return d+57}) 
+       .attr('id',function(d){return d} )
+       .text(function(d){return formatTime(d)}) 
        
   var time3=timeline.append("g").attr('id', 'time3')
 
-  time3.selectAll("text").data(dateArray.slice(113,170)
+  time3.selectAll("text").data(dateArray.slice(113,170))
        .enter()
        .append("text")
        .attr('x', function(d,i){
          return timeScale(i)})
        .attr('y',120)
-       .attr('id',function(d){return "date"+(d+113)} )
-       .text(function(d){return d+113})
+       .attr('id',function(d){return d} )
+       .text(function(d){return formatTime(d)})
 
 }
