@@ -18,7 +18,7 @@ Promise.all([mbsP,mdP,incomeP,totsecuritiesP,unemployP])
 
 var drawBubbles = function(mbsData,mdData,incomeData,securData,unemployData,date){
 
- var screen={width:1250,height:400};
+ var screen={width:1300,height:400};
  var margin = {top: 20, right: 60, bottom: 40, left: 70};
  var h=screen.height-margin.top-margin.bottom
  var w=screen.width-margin.right-margin.left
@@ -149,7 +149,7 @@ var colors = ["green","pink","orange","teal","red" ]
   legend.selectAll("rect").data(bubb)
         .enter()
         .append("rect")
-        .attr("x", function(d,i){return (i*250) - 30})
+        .attr("x", function(d,i){return (i*250) - 25})
         .attr("y", 30)
         .attr("width", 20)
         .attr("height", 20)
@@ -158,7 +158,7 @@ var colors = ["green","pink","orange","teal","red" ]
   legend.selectAll("text").data(bubb)
         .enter()
         .append("text")
-        .attr("x", function(d,i){return (i*250) + 10})
+        .attr("x", function(d,i){return (i*250) + 50})
         .attr("y", 40)
         .attr("id", function(d,i){ return d})
         .text(function(d){return d})
