@@ -158,7 +158,7 @@ var colors = ["orange","pink","green","teal","red" ]
        .attr("fill", "black")
        .on("click",function(){
               d3.selectAll("circle").remove()
-              d3.selectAll("bubtext").remove()
+              d3.selectAll("text#bubtext").remove()
               date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
               console.log(date)
           })
