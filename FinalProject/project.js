@@ -177,7 +177,7 @@ var colors = ["orange","pink","green","teal","red" ]
        .append("text")
        .attr('x', function(d,i){
          return timeScale(i)})
-       .attr('y',120)
+       .attr('y',220)
        .attr('id',function(d){return d} )
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
