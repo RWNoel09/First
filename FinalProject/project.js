@@ -152,6 +152,9 @@ var colors = ["orange","pink","green","teal","red" ]
        .attr('y',10)
        .attr('id',function(d){return d} )
        .text(function(d){return formatTime(d)})
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "5px")
+       .attr("fill", "black");
                                
   var time2 = timeline.append("g").attr('id', 'time2')
 
@@ -162,7 +165,10 @@ var colors = ["orange","pink","green","teal","red" ]
          return timeScale(i)})
        .attr('y',115)
        .attr('id',function(d){return d} )
-       .text(function(d){return formatTime(d)}) 
+       .text(function(d){return formatTime(d)})
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "5px")
+       .attr("fill", "black");
        
   var time3=timeline.append("g").attr('id', 'time3')
 
@@ -174,5 +180,8 @@ var colors = ["orange","pink","green","teal","red" ]
        .attr('y',120)
        .attr('id',function(d){return d} )
        .text(function(d){return formatTime(d)})
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "5px")
+       .attr("fill", "black");
 
 }
