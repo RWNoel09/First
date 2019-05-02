@@ -150,7 +150,7 @@ var colors = ["orange","pink","green","teal","red" ]
        .attr('x', function(d,i){
          return timeScale(i)})
        .attr('y',10)
-       .attr('id',function(d){return d} )
+       .attr('id',function(d,i){return i} )
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
@@ -164,7 +164,7 @@ var colors = ["orange","pink","green","teal","red" ]
        .attr('x', function(d,i){
          return timeScale(i)})
        .attr('y',115)
-       .attr('id',function(d){return d} )
+       .attr('id',function(d,i){return i} )
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
@@ -178,7 +178,7 @@ var colors = ["orange","pink","green","teal","red" ]
        .attr('x', function(d,i){
          return timeScale(i)})
        .attr('y',220)
-       .attr('id',function(d){return d} )
+       .attr('id',function(d,i){return i} )
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
