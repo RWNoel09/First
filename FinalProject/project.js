@@ -148,7 +148,7 @@ var colors = ["orange","pink","green","teal","red" ]
        .enter()
        .append("text")
        .attr('x', function(d,i){
-         return timescale(i)})
+         return timeScale(i)})
        .attr('y',10)
        .attr('id',function(d){return d} )
        .text(function(d){return formatTime(d)})
@@ -159,7 +159,7 @@ var colors = ["orange","pink","green","teal","red" ]
        .enter()
        .append("text")
        .attr('x', function(d,i){
-         return timescale(i)})
+         return timeScale(i)})
        .attr('y',115)
        .attr('id',function(d){return d} )
        .text(function(d){return formatTime(d)}) 
