@@ -18,7 +18,7 @@ Promise.all([mbsP,mdP,incomeP,totsecuritiesP,unemployP])
 
 var drawBubbles = function(mbsData,mdData,incomeData,securData,unemployData,date){
 
- var screen={width:1500,height:400};
+ var screen={width:1250,height:400};
  var margin = {top: 20, right: 60, bottom: 40, left: 70};
  var h=screen.height-margin.top-margin.bottom
  var w=screen.width-margin.right-margin.left
@@ -89,7 +89,7 @@ var colors = ["green","pink","orange","teal","red" ]
      .data(circlearray)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i) { return (i*280) + 100;})
+     .attr("cx", function(d,i) { return (i*250) + 100;})
      .attr("cy", 200)
      .attr("r", function(d,i){
        return Math.sqrt(d)*10;
@@ -102,7 +102,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .append("text")
        .text(function(d){
               return d;})
-       .attr("x", function(d,i) { return (i*280) + 100;})
+       .attr("x", function(d,i) { return (i*250) + 100;})
        .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
@@ -149,7 +149,7 @@ var colors = ["green","pink","orange","teal","red" ]
   legend.selectAll("rect").data(bubb)
         .enter()
         .append("rect")
-        .attr("x", function(d,i){return (i*200) + 5})
+        .attr("x", function(d,i){return (i*250) - 30})
         .attr("y", 30)
         .attr("width", 20)
         .attr("height", 20)
@@ -158,7 +158,7 @@ var colors = ["green","pink","orange","teal","red" ]
   legend.selectAll("text").data(bubb)
         .enter()
         .append("text")
-        .attr("x", function(d,i){return (i*200) + 55})
+        .attr("x", function(d,i){return (i*250) + 10})
         .attr("y", 40)
         .attr("id", function(d,i){ return d})
         .text(function(d){return d})
@@ -231,7 +231,7 @@ var colors = ["green","pink","orange","teal","red" ]
      .data(circlearray)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i) { return (i*280) + 100;})
+     .attr("cx", function(d,i) { return (i*250) + 100;})
      .attr("cy", 200)
      .attr("r", function(d,i){
        return Math.sqrt(d)*10;
@@ -244,7 +244,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .append("text")
        .text(function(d){
               return d;})
-       .attr("x", function(d,i) { return (i*280) + 100;})
+       .attr("x", function(d,i) { return (i*250) + 100;})
        .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
@@ -319,7 +319,7 @@ var colors = ["green","pink","orange","teal","red" ]
      .data(circlearray)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i) { return (i*280) + 100;})
+     .attr("cx", function(d,i) { return (i*250) + 100;})
      .attr("cy", 200)
      .attr("r", function(d,i){
        return Math.sqrt(d)*10;
@@ -332,7 +332,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .append("text")
        .text(function(d){
               return d;})
-       .attr("x", function(d,i) { return (i*280) + 100;})
+       .attr("x", function(d,i) { return (i*250) + 100;})
        .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
@@ -406,7 +406,7 @@ var combine = function(d,v,m,n,s,u){
      .data(circlearray)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i) { return (i*280) + 100;})
+     .attr("cx", function(d,i) { return (i*250) + 100;})
      .attr("cy", 200)
      .attr("r", function(d,i){
        return Math.sqrt(d)*10;
@@ -419,7 +419,7 @@ var combine = function(d,v,m,n,s,u){
        .append("text")
        .text(function(d){
               return d;})
-       .attr("x", function(d,i) { return (i*280) + 100;})
+       .attr("x", function(d,i) { return (i*250) + 100;})
        .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
