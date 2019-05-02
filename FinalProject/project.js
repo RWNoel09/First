@@ -181,7 +181,6 @@ var colors = ["green","pink","orange","teal","red" ]
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
        .attr("fill", "white")
-       .attr("id", "timetext")
        .on("click",function(){
               d3.selectAll("circle").remove()
               d3.selectAll("text#bubtext").remove()
@@ -270,7 +269,6 @@ var colors = ["green","pink","orange","teal","red" ]
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
        .attr("fill", "white")
-       .attr("id", "timetext")
        .on("click",function(){
               d3.selectAll("circle").remove()
               d3.selectAll("text#bubtext").remove()
@@ -358,7 +356,6 @@ var colors = ["green","pink","orange","teal","red" ]
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
        .attr("fill", "white")
-       .attr("id", "timetext")
        .on("click",function(){
               d3.selectAll("circle").remove()
               d3.selectAll("text#bubtext").remove()
