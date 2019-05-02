@@ -18,7 +18,7 @@ Promise.all([mbsP,mdP,incomeP,totsecuritiesP,unemployP])
 
 var drawBubbles = function(mbsData,mdData,incomeData,securData,unemployData,date){
 
- var screen={width:1000,height:750};
+ var screen={width:1500,height:400};
  var margin = {top: 20, right: 60, bottom: 40, left: 70};
  var h=screen.height-margin.top-margin.bottom
  var w=screen.width-margin.right-margin.left
@@ -159,7 +159,7 @@ var colors = ["green","pink","orange","teal","red" ]
         .enter()
         .append("text")
         .attr("x", function(d,i){return (i*200) + 55})
-        .attr("y", 30)
+        .attr("y", 40)
         .attr("id", function(d,i){ return d})
         .text(function(d){return d})
         .attr("font-family", "sans-serif")
