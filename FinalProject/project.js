@@ -131,7 +131,8 @@ var colors = ["green","pink","orange","teal","red" ]
       .attr("class","line")
       .attr("d", line);
 
-//timeline
+//timeline and legend     
+       
   var timeScale = d3.scaleLinear()
                    .domain([0,56])
                    .range([0,1250]);
@@ -143,6 +144,28 @@ var colors = ["green","pink","orange","teal","red" ]
        .attr('height', 320)
        .attr('id', 'timeline')
   
+  var bubb = ["Income", "Mortgage-Backed Securities", "Total Debt Securities", "Unemployment"]
+  var legend = timeline.append("g").attr('id', "legend")
+  legend.selectAll("rect").data(circlearray)
+        .enter()
+        .append("rect")
+        .attr("x", function(d,i){ return (i*50)};)
+        .attr("y", 10)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill", function(d,i) { return colors[i];})
+       
+  legend.selectAll("text").data(bubb)
+        .enter()
+        .append("text")
+        .attr("x", function(d,i){return (i*50) + 10})
+        .attr("y", 70)
+        .attr("id", function(d,i){ return d})
+        .text(function(d){return d})
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "10px")
+        .attr("fill", "black")
+  
   var time1 = timeline.append("g").attr('id', 'time1')
 
   time1.selectAll("text").data(dateArray.slice(0,56))
@@ -150,7 +173,7 @@ var colors = ["green","pink","orange","teal","red" ]
        .append("text")
        .attr('x', function(d,i){
          return timeScale(i)})
-       .attr('y',10)
+       .attr('y',70)
        .attr('id',function(d,i){return i} )
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
