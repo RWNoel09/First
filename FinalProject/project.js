@@ -144,7 +144,7 @@ var colors = ["orange","pink","green","teal","red" ]
   
   var time1 = timeline.append("g").attr('id', 'time1')
 
-  time1.selectAll("text").data(dateArray.slice(0,57))
+  time1.selectAll("text").data(dateArray.slice(0,56))
        .enter()
        .append("text")
        .attr('x', function(d,i){
@@ -158,7 +158,7 @@ var colors = ["orange","pink","green","teal","red" ]
                                
   var time2 = timeline.append("g").attr('id', 'time2')
 
-  time2.selectAll("text").data(dateArray.slice(57,113))
+  time2.selectAll("text").data(dateArray.slice(56,112))
        .enter()
        .append("text")
        .attr('x', function(d,i){
@@ -172,7 +172,7 @@ var colors = ["orange","pink","green","teal","red" ]
        
   var time3=timeline.append("g").attr('id', 'time3')
 
-  time3.selectAll("text").data(dateArray.slice(113,170))
+  time3.selectAll("text").data(dateArray.slice(112,169))
        .enter()
        .append("text")
        .attr('x', function(d,i){
