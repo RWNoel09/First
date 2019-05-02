@@ -89,8 +89,8 @@ var colors = ["green","pink","orange","teal","red" ]
      .data(circlearray)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i) { return (i*180) + 100;})
-     .attr("cy", 250)
+     .attr("cx", function(d,i) { return (i*280) + 100;})
+     .attr("cy", 200)
      .attr("r", function(d,i){
        return Math.sqrt(d)*10;
      })
@@ -102,8 +102,8 @@ var colors = ["green","pink","orange","teal","red" ]
        .append("text")
        .text(function(d){
               return d;})
-       .attr("x", function(d,i) { return (i*180) + 100;})
-       .attr("y", 250)
+       .attr("x", function(d,i) { return (i*280) + 100;})
+       .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
        .attr("fill", "black")
@@ -231,7 +231,7 @@ var colors = ["green","pink","orange","teal","red" ]
      .data(circlearray)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i) { return (i*180) + 100;})
+     .attr("cx", function(d,i) { return (i*280) + 100;})
      .attr("cy", 200)
      .attr("r", function(d,i){
        return Math.sqrt(d)*10;
@@ -244,8 +244,8 @@ var colors = ["green","pink","orange","teal","red" ]
        .append("text")
        .text(function(d){
               return d;})
-       .attr("x", function(d,i) { return (i*180) + 100;})
-       .attr("y", 250)
+       .attr("x", function(d,i) { return (i*280) + 100;})
+       .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
        .attr("fill", "black")
@@ -319,8 +319,8 @@ var colors = ["green","pink","orange","teal","red" ]
      .data(circlearray)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i) { return (i*180) + 100;})
-     .attr("cy", 250)
+     .attr("cx", function(d,i) { return (i*280) + 100;})
+     .attr("cy", 200)
      .attr("r", function(d,i){
        return Math.sqrt(d)*10;
      })
@@ -332,8 +332,8 @@ var colors = ["green","pink","orange","teal","red" ]
        .append("text")
        .text(function(d){
               return d;})
-       .attr("x", function(d,i) { return (i*180) + 100;})
-       .attr("y", 250)
+       .attr("x", function(d,i) { return (i*280) + 100;})
+       .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
        .attr("fill", "black")
@@ -406,8 +406,8 @@ var combine = function(d,v,m,n,s,u){
      .data(circlearray)
      .enter()
      .append("circle")
-     .attr("cx", function(d,i) { return (i*180) + 100;})
-     .attr("cy", 250)
+     .attr("cx", function(d,i) { return (i*280) + 100;})
+     .attr("cy", 200)
      .attr("r", function(d,i){
        return Math.sqrt(d)*10;
      })
@@ -419,8 +419,8 @@ var combine = function(d,v,m,n,s,u){
        .append("text")
        .text(function(d){
               return d;})
-       .attr("x", function(d,i) { return (i*180) + 100;})
-       .attr("y", 250)
+       .attr("x", function(d,i) { return (i*280) + 100;})
+       .attr("y", 200)
        .attr("font-family", "sans-serif")
        .attr("font-size", "15px")
        .attr("fill", "black")
