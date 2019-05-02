@@ -165,7 +165,7 @@ var colors = ["green","pink","orange","teal","red" ]
         .text(function(d){return d})
         .attr("font-family", "sans-serif")
         .attr("font-size", "10px")
-        .attr("fill", "black")
+        .attr("fill", "white")
         .attr("id", "legtext")
   
   var time1 = timeline.append("g").attr('id', 'time1')
