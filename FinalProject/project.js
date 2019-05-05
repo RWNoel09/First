@@ -131,20 +131,20 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
        .attr("id", "bubtext");
 
 
-   xScale = d3.scaleTime()
-              .domain([
-                d3.min(bubbleArray, function(d){ return d.Date;}),
-                d3.max(bubbleArray, function(d){ return d.Date;})
-              ])
-              .range([400,w]);
+   //xScale = d3.scaleTime()
+              //.domain([
+                //d3.min(bubbleArray, function(d){ return d.Date;}),
+                //d3.max(bubbleArray, function(d){ return d.Date;})
+              //])
+              //.range([400,w]);
 
-   yScale = d3.scaleLinear()
-              .domain([0, d3.max(bubbleArray, function(d) { return d.mbs;})])
-              .range([h,0]);
+   //yScale = d3.scaleLinear()
+              //.domain([0, d3.max(bubbleArray, function(d) { return d.mbs;})])
+              //.range([h,0]);
 
-   var line = d3.line()
-                .x(function(d){return xScale(bubbleArray.Date);})
-                .y(function(d){return yScale(bubbleArray.mbs);})
+   //var line = d3.line()
+                //.x(function(d){return xScale(bubbleArray.Date);})
+                //.y(function(d){return yScale(bubbleArray.mbs);})
 
   console.log(bubbleArray.slice(0,date+1))
    svg.append("path")
@@ -255,26 +255,26 @@ svg.selectAll("text")
 
   var bubb = ["Income","Mortgage Debt","Mortgage-Backed Securities","Total Debt Securities","Unemployment"]
   var legend = timeline.append("g").attr('id', "legend")
-  legend.selectAll("rect").data(bubb)
-        .enter()
-        .append("rect")
-        .attr("x", function(d,i){return (i*250) + 85})
-        .attr("y", 30)
-        .attr("width", 20)
-        .attr("height", 20)
-        .attr("fill", function(d,i) { return colors[i];})
+  //legend.selectAll("rect").data(bubb)
+        //.enter()
+        //.append("rect")
+        //.attr("x", function(d,i){return (i*250) + 85})
+        //.attr("y", 30)
+        //.attr("width", 20)
+        //.attr("height", 20)
+        //.attr("fill", function(d,i) { return colors[i];})
 
-  legend.selectAll("text").data(bubb)
-        .enter()
-        .append("text")
-        .attr("x", function(d,i){return (i*250) + 110})
-        .attr("y", 40)
-        .attr("id", function(d,i){ return d})
-        .text(function(d){return d})
-        .attr("font-family", "sans-serif")
-        .attr("font-size", "10px")
-        .attr("fill", "white")
-        .attr("id", "legtext")
+  //legend.selectAll("text").data(bubb)
+        //.enter()
+        //.append("text")
+        //.attr("x", function(d,i){return (i*250) + 110})
+        //.attr("y", 40)
+        //.attr("id", function(d,i){ return d})
+        //.text(function(d){return d})
+        //.attr("font-family", "sans-serif")
+        //.attr("font-size", "10px")
+        //.attr("fill", "white")
+        //.attr("id", "legtext")
 
   var time1 = timeline.append("g").attr('id', 'time1')
 
