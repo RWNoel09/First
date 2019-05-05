@@ -146,11 +146,11 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
                 //.x(function(d){return xScale(bubbleArray.Date);})
                 //.y(function(d){return yScale(bubbleArray.mbs);})
 
-  console.log(bubbleArray.slice(0,date+1))
-   svg.append("path")
-      .datum(bubbleArray.slice(0,date+1))
-      .attr("class","line")
-      .attr("d", line);
+  //console.log(bubbleArray.slice(0,date+1))
+   //svg.append("path")
+      //.datum(bubbleArray.slice(0,date+1))
+      //.attr("class","line")
+      //.attr("d", line);
 
 var update = function(date){
 
