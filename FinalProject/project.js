@@ -306,7 +306,7 @@ svg.selectAll("text")
        .attr('id', 'timeline')
 
   var bubb = ["Income","Mortgage Debt","Mortgage-Backed Securities","Total Debt Securities","Unemployment"]
-  var legend = timeline.append("g").attr('id', "legend")
+  //var legend = timeline.append("g").attr('id', "legend")
   //legend.selectAll("rect").data(bubb)
         //.enter()
         //.append("rect")
@@ -341,7 +341,7 @@ svg.selectAll("text")
        .attr('y',15)
        .attr('id',function(d,i){return i} )
        .text(function(d){return formatTime(d)})
-       .attr("font-family", "san-serif")
+       .attr("font-family", "sans-serif")
        .attr("font-size", "12px")
        .attr("fill", "white")
        .on("mouseover",function(){
