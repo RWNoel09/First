@@ -117,7 +117,7 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div.text(d)	
+            div.text(function(d,i){ return dataArray[i]})	
                 .style("left", (d3.event.pageX) + "px")		
                 .style("top", (d3.event.pageY - 28) + "px");	
             })			
@@ -228,7 +228,7 @@ svg.selectAll("circle")
 .data(circlearray)
 .enter()
 .append("circle")
-.transition().duration(500).ease(d3.easeCircleIn)
+.transition().duration(500).ease(d3.easeLinear)
 .attr("cx", function(d,i) { return (i*260) + 120;})
 .attr("cy", 200)
 .attr("r", function(d,i){
@@ -239,7 +239,7 @@ return Math.sqrt(d)*10;
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div.text(d)	
+            div.text(function(d,i){ return dataArray[i]})
                 .style("left", (d3.event.pageX) + "px")		
                 .style("top", (d3.event.pageY - 28) + "px");	
             })			
@@ -343,8 +343,8 @@ svg.selectAll("text")
        .attr("font-size", "5px")
        .attr("fill", "white")
        .on("click",function(){
-              d3.selectAll("circle").remove().transition()
-              d3.selectAll("text#bubtext").remove().transition()
+              d3.selectAll("circle").remove()
+              d3.selectAll("text#bubtext").remove()
               date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
               console.log(date)
               update(date)
@@ -365,8 +365,8 @@ svg.selectAll("text")
        .attr("font-size", "5px")
        .attr("fill", "white")
        .on("click",function(){
-              d3.selectAll("circle").remove().transition()
-              d3.selectAll("text#bubtext").remove().transition()
+              d3.selectAll("circle").remove()
+              d3.selectAll("text#bubtext").remove()
               date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
               console.log(date)
               update(date)
