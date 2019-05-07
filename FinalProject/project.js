@@ -330,7 +330,7 @@ svg.selectAll("text")
 
   var time1 = timeline.append("g").attr('id', 'time1')
 
-  time1.selectAll("text").data(dateArray.slice(0,56))
+  time1.selectAll("text").data(dateArray.slice(0,23))
        .enter()
        .append("text")
        .attr('x', function(d,i){
@@ -353,18 +353,18 @@ svg.selectAll("text")
 
   var time2 = timeline.append("g").attr('id', 'time2')
 
-  time2.selectAll("text").data(dateArray.slice(56,112))
+  time2.selectAll("text").data(dateArray.slice(23,47))
        .enter()
        .append("text")
        .attr('x', function(d,i){
          return timeScale(i)})
        .attr('y',45)
-       .attr('id',function(d,i){return i+56} )
+       .attr('id',function(d,i){return i+23} )
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
        .attr("fill", "white")
-       .on("click",function(){
+       .on("mouseover",function(){
               d3.selectAll("circle").remove()
               d3.selectAll("text#bubtext").remove()
               date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
@@ -375,18 +375,18 @@ svg.selectAll("text")
 
   var time3=timeline.append("g").attr('id', 'time3')
 
-  time3.selectAll("text").data(dateArray.slice(112,169))
+  time3.selectAll("text").data(dateArray.slice(47,71))
        .enter()
        .append("text")
        .attr('x', function(d,i){
          return timeScale(i)})
        .attr('y',60)
-       .attr('id',function(d,i){return i+112} )
+       .attr('id',function(d,i){return i+47} )
        .text(function(d){return formatTime(d)})
        .attr("font-family", "sans-serif")
        .attr("font-size", "5px")
        .attr("fill", "white")
-       .on("click",function(){
+       .on("mouseover",function(){
               d3.selectAll("circle").remove()
               d3.selectAll("text#bubtext").remove()
               date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
@@ -394,5 +394,93 @@ svg.selectAll("text")
               update(date)
 
           })
+       
+  var time4=timeline.append("g").attr('id', 'time4')
+
+  time4.selectAll("text").data(dateArray.slice(71,95))
+       .enter()
+       .append("text")
+       .attr('x', function(d,i){
+         return timeScale(i)})
+       .attr('y',75)
+       .attr('id',function(d,i){return i+71} )
+       .text(function(d){return formatTime(d)})
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "5px")
+       .attr("fill", "white")
+       .on("mouseover",function(){
+              d3.selectAll("circle").remove()
+              d3.selectAll("text#bubtext").remove()
+              date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
+              console.log(date)
+              update(date)
+
+          })
+       
+  var time5=timeline.append("g").attr('id', 'time5')
+
+  time5.selectAll("text").data(dateArray.slice(95,119))
+       .enter()
+       .append("text")
+       .attr('x', function(d,i){
+         return timeScale(i)})
+       .attr('y',90)
+       .attr('id',function(d,i){return i+95} )
+       .text(function(d){return formatTime(d)})
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "5px")
+       .attr("fill", "white")
+       .on("mouseover",function(){
+              d3.selectAll("circle").remove()
+              d3.selectAll("text#bubtext").remove()
+              date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
+              console.log(date)
+              update(date)
+
+          })
+       
+  var time6=timeline.append("g").attr('id', 'time6')
+
+  time6.selectAll("text").data(dateArray.slice(119,144))
+       .enter()
+       .append("text")
+       .attr('x', function(d,i){
+         return timeScale(i)})
+       .attr('y',105)
+       .attr('id',function(d,i){return i+119} )
+       .text(function(d){return formatTime(d)})
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "5px")
+       .attr("fill", "white")
+       .on("mouseover",function(){
+              d3.selectAll("circle").remove()
+              d3.selectAll("text#bubtext").remove()
+              date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
+              console.log(date)
+              update(date)
+
+          })
+       
+  var time7=timeline.append("g").attr('id', 'time7')
+
+  time7.selectAll("text").data(dateArray.slice(144,169))
+       .enter()
+       .append("text")
+       .attr('x', function(d,i){
+         return timeScale(i)})
+       .attr('y',120)
+       .attr('id',function(d,i){return i+144} )
+       .text(function(d){return formatTime(d)})
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "5px")
+       .attr("fill", "white")
+       .on("mouseover",function(){
+              d3.selectAll("circle").remove()
+              d3.selectAll("text#bubtext").remove()
+              date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
+              console.log(date)
+              update(date)
+
+          })  
 
 }
