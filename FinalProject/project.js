@@ -295,7 +295,7 @@ svg.selectAll("text")
 //timeline and legend
 
   var timeScale = d3.scaleLinear()
-                   .domain([0,13])
+                   .domain([0,24])
                    .range([0,1250]);
 
   var formatTime = d3.timeFormat("%b %y");
