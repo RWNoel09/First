@@ -112,16 +112,16 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
      .attr("r", function(d,i){
        return Math.sqrt(d)*10;
      })
-     .attr("fill", function(d,i) { return colors[i];})
+     .attr("fill", function(d,i) { return colors[i]; console.log(dataArray[i]);})
      .on("mouseover", function(d,i) {		
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div.text(function(d,i){ return dataArray[i]})	
+            div.text(function(d,i){ return dataArray[i];})	
                 .style("left", (d3.event.pageX) + "px")		
                 .style("top", (d3.event.pageY - 28) + "px");	
             })			
-      .on("mouseout", function(d) {		
+      .on("mouseout", function(d,i) {		
             div.transition()		
                 .duration(500)		
                 .style("opacity", 0);	
@@ -228,7 +228,6 @@ svg.selectAll("circle")
 .data(circlearray)
 .enter()
 .append("circle")
-.transition().duration(500)
 .attr("cx", function(d,i) { return (i*260) + 120;})
 .attr("cy", 200)
 .attr("r", function(d,i){
