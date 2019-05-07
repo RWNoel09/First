@@ -113,7 +113,7 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
        return Math.sqrt(d)*10;
      })
      .attr("fill", function(d,i) { return colors[i];})
-     .on("mouseover", function(d) {		
+     .on("mouseover", function(d,i) {		
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
@@ -228,14 +228,14 @@ svg.selectAll("circle")
 .data(circlearray)
 .enter()
 .append("circle")
-.transition().duration(500).ease(d3.easeLinear)
+.transition().duration(500)
 .attr("cx", function(d,i) { return (i*260) + 120;})
 .attr("cy", 200)
 .attr("r", function(d,i){
 return Math.sqrt(d)*10;
 })
 .attr("fill", function(d,i) { return colors[i];})
-.on("mouseover", function(d) {		
+.on("mouseover", function(d,i) {		
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
