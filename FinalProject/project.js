@@ -73,6 +73,16 @@ var combine = function(d,v,m,n,s,u){
   return newarray
 }
 
+var combine2 = function(c,d){
+  var newarray = c.map(function(d,i){
+    return {
+      circle: c,
+      data: d[i] 
+    }
+  })
+  return newarray
+}
+
 var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
  var bubbleArray = combine(dateArray,valArray,mdarray,inArray,securArray,unemployArray)
  console.log(bubbleArray)
@@ -103,6 +113,8 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
   console.log(dataArray)
   var circlearray = [inArray[date],mdarray[date],valArray[date],securArray[date],unemployArray[date]]
   console.log(circlearray)
+  var finalArray = combine2(circlearray,dataArray)
+  console.log(finalArray)
   svg.selectAll("circle")
      .data(circlearray)
      .enter()
@@ -118,7 +130,7 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div.text(function(d,i){ return dataArray[d#i];})	
+            div.text(function(d,i){ return dataArray[];})	
                 .style("left", (d3.event.pageX) + "px")		
                 .style("top", (d3.event.pageY - 28) + "px");	
             })			
