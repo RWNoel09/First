@@ -110,6 +110,19 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
        return Math.sqrt(d)*10;
      })
      .attr("fill", function(d,i) { return colors[i];})
+     .on("mouseover", function(d) {		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div.text(d)	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+            })			
+      .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        });
 
    svg.selectAll("text")
        .data(circlearray)
@@ -219,6 +232,19 @@ svg.selectAll("circle")
 return Math.sqrt(d)*10;
 })
 .attr("fill", function(d,i) { return colors[i];})
+.on("mouseover", function(d) {		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div.text(d)	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+            })			
+.on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        });
 
 svg.selectAll("text")
 .data(circlearray)
