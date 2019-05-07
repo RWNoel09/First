@@ -129,7 +129,7 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div.text(function(d,i){ return "$" + "d.data";})	
+            div.text(function(d,i){ return "$" + d.data;})	
                 .style("left", (d3.event.pageX) + "px")		
                 .style("top", (d3.event.pageY - 28) + "px");	
             })			
@@ -231,11 +231,22 @@ unemploy: u[i]
 })
 return newarray
 }
+
+var combine2 = function(circle,data){
+  var newArray = circle.map(function(d,i){
+    return {
+      circle: d,
+      data: data[i] 
+    }
+  })
+  return newArray
+}
 var bubb = ["Income","Mortgage Debt","Mortgage-Backed Securities","Total Debt Securities","Unemployment"]
 var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
 var dataArray = [parseFloat(incomeData[date].income),parseFloat(mdData[date].mdebt)*1000,parseFloat(mbsData[date].mbs)*1000000,parseFloat(securData[date].secur)*1000,parseFloat(unemployData[date].unemploy)]
 var circlearray = [inArray[date],mdarray[date],valArray[date],securArray[date],unemployArray[date]]
 console.log(circlearray)
+var finalArray = combine2(circlearray,dataArray)      
 svg.selectAll("circle")
 .data(circlearray)
 .enter()
