@@ -273,9 +273,9 @@ var finalArray = combine2(circlearray,dataArray)
 //                 .style("opacity", 0);	
 //         });
 
-   d3.select("#circle1").transition().duration(2000).attr("r", function(d,i){
-        return Math.sqrt(d.circle)*10;
-      });
+   d3.select("#circle1").transition().duration(2000).attr("r",
+        Math.sqrt(finalArray[0])*10;
+      );
 
 svg.selectAll("text")
 .data(circlearray)
