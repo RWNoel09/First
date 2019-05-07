@@ -327,6 +327,9 @@ svg.selectAll("text")
         //.attr("font-size", "10px")
         //.attr("fill", "white")
         //.attr("id", "legtext")
+  
+  var header = timeline.append("g")
+  header.selectAll("text").append("text").attr("x", 15).attr("y",5).text("Date").attr("font-family", "sans-serif").attr("font-size", "12px")
 
   var time1 = timeline.append("g").attr('id', 'time1')
 
