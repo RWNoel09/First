@@ -73,14 +73,14 @@ var combine = function(d,v,m,n,s,u){
   return newarray
 }
 
-var combine2 = function(c,d){
-  var newarray = c.map(function(d,i){
+var combine2 = function(circle,data){
+  var newArray = circle.map(function(d,i){
     return {
-      circle: c,
-      data: d[i] 
+      circle: d,
+      data: data[i] 
     }
   })
-  return newarray
+  return newArray
 }
 
 var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
