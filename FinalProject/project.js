@@ -91,6 +91,9 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
             .attr("height",h)
             .attr("id", "plot")
 
+ var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
 
   var mbsTotal = mbsAcum(mbsData,date)
   var bubbleVal = mbsTotal.reduce(function(total, amount){
