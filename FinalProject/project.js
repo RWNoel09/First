@@ -125,11 +125,11 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
        return Math.sqrt(d.circle)*10;
      })
      .attr("fill", function(d,i) { return colors[i];})
-     .on("mouseover", function(d,i) {		
+     .on("mouseover", function(d) {		
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div.text(function(d){ return d;})	
+            div.text(function(d){ return d.data;})	
                 .style("left", (d3.event.pageX) + "px")		
                 .style("top", (d3.event.pageY - 28) + "px");	
             })			
