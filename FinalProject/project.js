@@ -121,6 +121,7 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
      .append("circle")
      .attr("cx", function(d,i) { return (i*260) + 120;})
      .attr("cy", 200)
+     .attr('id', function(d,i){return "circle" + i;})
      .attr("r", function(d,i){
        return Math.sqrt(d.circle)*10;
      })
@@ -345,7 +346,7 @@ svg.selectAll("text")
        .attr("font-size", "12px")
        .attr("fill", "white")
        .on("mouseover",function(){
-         d3.selectAll("circle").remove()
+         //d3.selectAll("circle").remove()
          d3.selectAll("text#bubtext").remove()
          date=parseInt(d3.select(this).attr("id").replace(/[^0-9]/ig,""))
          console.log(date)
