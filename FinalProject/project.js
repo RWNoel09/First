@@ -302,7 +302,7 @@ svg.selectAll("text")
 
   var timeline = d3.select("body").append("svg")
        .attr('width', 1250)
-       .attr('height', 320)
+       .attr('height', 300)
        .attr('id', 'timeline')
 
   var bubb = ["Income","Mortgage Debt","Mortgage-Backed Securities","Total Debt Securities","Unemployment"]
@@ -335,10 +335,10 @@ svg.selectAll("text")
        .append("text")
        .attr('x', function(d,i){
          return timeScale(i)})
-       .attr('y',100)
+       .attr('y',30)
        .attr('id',function(d,i){return i} )
        .text(function(d){return formatTime(d)})
-       .attr("font-family", "Tahoma";)
+       .attr("font-family", "san-serif";)
        .attr("font-size", "5px")
        .attr("fill", "white")
        .on("mouseover",function(){
@@ -358,10 +358,10 @@ svg.selectAll("text")
        .append("text")
        .attr('x', function(d,i){
          return timeScale(i)})
-       .attr('y',115)
+       .attr('y',45)
        .attr('id',function(d,i){return i+56} )
        .text(function(d){return formatTime(d)})
-       .attr("font-family", "Tahoma";)
+       .attr("font-family", "sans-serif";)
        .attr("font-size", "5px")
        .attr("fill", "white")
        .on("click",function(){
@@ -380,10 +380,10 @@ svg.selectAll("text")
        .append("text")
        .attr('x', function(d,i){
          return timeScale(i)})
-       .attr('y',220)
+       .attr('y',60)
        .attr('id',function(d,i){return i+112} )
        .text(function(d){return formatTime(d)})
-       .attr("font-family", "Tahoma";)
+       .attr("font-family", "sans-serif";)
        .attr("font-size", "5px")
        .attr("fill", "white")
        .on("click",function(){
