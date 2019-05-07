@@ -118,7 +118,7 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div.text(function(d,i){ return dataArray[id];})	
+            div.text(function(d,i){ return dataArray[d#i];})	
                 .style("left", (d3.event.pageX) + "px")		
                 .style("top", (d3.event.pageY - 28) + "px");	
             })			
