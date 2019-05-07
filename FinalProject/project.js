@@ -248,22 +248,22 @@ var circlearray = [inArray[date],mdarray[date],valArray[date],securArray[date],u
 console.log(circlearray)
 var finalArray = combine2(circlearray,dataArray)      
 svg.selectAll("circle")
-.data(circlearray)
+.data(finalArray)
 .enter()
 .append("circle")
 .attr("cx", function(d,i) { return (i*260) + 120;})
 .attr("cy", 200)
 .attr("r", function(d,i){
-return Math.sqrt(d)*10;
+return Math.sqrt(d.circle)*10;
 })
 .attr("fill", function(d,i) { return colors[i];})
 .on("mouseover", function(d,i) {		
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div.text(function(d,i){ return dataArray[i]})
+            div.text("$" + d.data)
                 .style("left", (d3.event.pageX) + "px")		
-                .style("top", (d3.event.pageY - 28) + "px");	
+                .style("top", (d3.event.pageY) + "px");	
             })			
 .on("mouseout", function(d) {		
             div.transition()		
