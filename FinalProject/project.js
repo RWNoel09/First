@@ -115,30 +115,34 @@ var colors = ["#196F3D","#FF33B2","#D35400","#1F618D","#7B241C" ]
   console.log(circlearray)
   var finalArray = combine2(circlearray,dataArray)
   console.log(finalArray)
-  svg.selectAll("circle")
-     .data(finalArray)
-     .enter()
-     .append("circle")
-     .attr("cx", function(d,i) { return (i*260) + 120;})
-     .attr("cy", 200)
-     .attr('id', function(d,i){return "circle" + i;})
-     .attr("r", function(d,i){
-       return Math.sqrt(d.circle)*10;
-     })
-     .attr("fill", function(d,i) { return colors[i];})
-     .on("mouseover", function(d) {		
-            div.transition()		
-                .duration(200)		
-                .style("opacity", .9);		
-            div.text("$" + d.data)	
-                .style("left", (d3.event.pageX) + "px")		
-                .style("top", (d3.event.pageY - 28) + "px");	
-            })			
-      .on("mouseout", function(d,i) {		
-            div.transition()		
-                .duration(500)		
-                .style("opacity", 0);	
-        });
+//   svg.selectAll("circle")
+//      .data(finalArray)
+//      .enter()
+//      .append("circle")
+//      .attr("cx", function(d,i) { return (i*260) + 120;})
+//      .attr("cy", 200)
+//      .attr('id', function(d,i){return "circle" + i;})
+//      .attr("r", function(d,i){
+//        return Math.sqrt(d.circle)*10;
+//      })
+//      .attr("fill", function(d,i) { return colors[i];})
+//      .on("mouseover", function(d) {		
+//             div.transition()		
+//                 .duration(200)		
+//                 .style("opacity", .9);		
+//             div.text("$" + d.data)	
+//                 .style("left", (d3.event.pageX) + "px")		
+//                 .style("top", (d3.event.pageY - 28) + "px");	
+//             })			
+//       .on("mouseout", function(d,i) {		
+//             div.transition()		
+//                 .duration(500)		
+//                 .style("opacity", 0);	
+//         });
+       
+   d3.select("#circle1").transition().duration(2000).attr("r", function(d,i){
+        return Math.sqrt(d.circle)*10;
+      });
 
    svg.selectAll("text")
        .data(circlearray)
